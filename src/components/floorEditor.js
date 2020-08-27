@@ -4,10 +4,13 @@ import 'leaflet-editable'
 
 class floorEditor {
   constructor () {
-    var floorMap
-    var sourceData
-    var lastUsedData
+    var floorMap,
+        sourceData,
+        lastUsedData
 
+    this.historyCoordinates = []
+    this.step = 0
+    
     axios.get('http://localhost:3000/floor').then((response) => {
       let options = {
         type: 'editor' // viewer
@@ -28,7 +31,6 @@ class floorEditor {
       minZoom: -1
     })
     console.log('data', data)
-    debugger
     
     let imageUrl = data.plan_rooms.content.plan_file // устанавливаем изображение чтобы оно не исказилось и помещалось в координаты 1000 х 1000
     let bounds = await this.getBounds(imageUrl)
@@ -49,6 +51,21 @@ class floorEditor {
     floorMap.on('editable:drawing:end', e => {
       let newData = this.getResultGeoJSON()
       this.initBaseData(floorMap, newData)
+    })
+
+    floorMap.on('editable:vertex:dragend', e => {
+      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.push(this.getResultGeoJSON())
+      this.step++
+      console.log('History:', this.historyCoordinates)
+      console.log('Step:', this.step)
+    })
+  
+    floorMap.on('editable:vertex:deleted', e => {
+      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.push(this.getResultGeoJSON())
+      this.step++
+      console.log(this.historyCoordinates)
     })
 
     floorMap.on('editable:editing', e => {
