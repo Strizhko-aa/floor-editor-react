@@ -6,12 +6,17 @@ class FloorEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      map: ['init']
+      map: null
     }
   }
 
   initMap () {
-    const _val = new floorEditor()
+    const _val = new floorEditor(
+      {
+        data: this.props.data,
+        mode: 'editor'
+      }
+    )
     this.setState({
       map: _val
     })
@@ -23,7 +28,9 @@ class FloorEditor extends React.Component {
 
   render() {
     return (
-      <div id="map" style={{width: '900px', height: '900px'}}>
+      <div>
+        <button onClick={() => {this.myFunc()}}>click</button>
+        <div id="map" style={{width: '900px', height: '900px'}}/>
       </div>
     )
   }

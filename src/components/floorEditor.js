@@ -1,41 +1,35 @@
 import L from 'leaflet'
-import axios from 'axios'
 import 'leaflet-editable'
 
 class floorEditor {
-  constructor () {
-    var floorMap
-    var sourceData
-    var lastUsedData
+  constructor (params) {
+    if (params.data === undefined) {
+      throw new Error('object with key "data" must be passed in constuctor')
+    }
+    this.floorMap = null
+    this.sourceData = params.data || null
+    this.lastUsedData = null
 
-    axios.get('http://localhost:3000/floor').then((response) => {
-      let options = {
-        type: 'editor' // viewer
-      }
-      this.initMap('map', response.data, options).then(succ => {
-        this.floorMap = succ
-      })
+    this.initMap('map', params.data, params.mode).then(succ => {
+      this.floorMap = succ
     })
   }
 
 
 
-  async initMap(blockId, data, options) { // TODO режимы просмотр/редактирование
-    this.sourceData = data
+  async initMap(blockId, data, mode) { // TODO режимы просмотр/редактирование
     let floorMap = L.map(blockId, {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
-      editable: options.type === 'editor',
+      editable: mode === 'editor',
       minZoom: -1
     })
-    console.log('data', data)
-    debugger
     
     let imageUrl = data.plan_rooms.content.plan_file // устанавливаем изображение чтобы оно не исказилось и помещалось в координаты 1000 х 1000
     let bounds = await this.getBounds(imageUrl)
     L.imageOverlay(imageUrl, bounds).addTo(floorMap)
     floorMap.fitBounds(bounds)
 
-    if (options !== undefined && options.type === 'editor') {
+    if (mode === 'editor') {
       this.addEditControls(floorMap)
     }
 
