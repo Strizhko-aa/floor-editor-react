@@ -11,15 +11,17 @@ class floorEditor {
     this.lastUsedData = null
     this.mode = params.mode === 'editor' ? params.mode : 'viewer'
     this.featureHoverCallback = params.featureHoverCallback
+    this.featureOutCallback = params.featureOutCallback
+    this.saveCallback = params.saveCallback
     this.historyCoordinates = []
     this.step = 0
 
-    this.initMap(params.blockId, params.data, params.saveCallback).then(succ => {
+    this.initMap(params.blockId, params.data).then(succ => {
       this.floorMap = succ
     })
   }
 
-  async initMap(blockId, data, saveCallback) { 
+  async initMap(blockId, data) { 
     let floorMap = L.map(blockId, {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
       editable: this.mode === 'editor',
@@ -32,7 +34,7 @@ class floorEditor {
     floorMap.fitBounds(bounds)
 
     if (this.mode === 'editor') {
-      this.addEditControls(floorMap, saveCallback)
+      this.addEditControls(floorMap)
     } else {
       console.log(document.getElementById('control_' + blockId))
       document.getElementById('control_' + blockId).style.display = 'none'
@@ -93,6 +95,10 @@ class floorEditor {
       if (this.featureHoverCallback !== undefined) {
         let _call = this.featureHoverCallback
         layer.on('mouseover', e => { _call(e)})
+      }
+      if (this.featureOutCallback !== undefined) {
+        let _call = this.featureOutCallback
+        layer.on('mouseout', e => { _call(e)})
       }
 
       if (this.mode === 'editor') { // включаем редактирование объекта
@@ -241,71 +247,56 @@ class floorEditor {
     }
   }
 
-  addEditControls(floorMap, saveCallback) {
-
-    L.Control.SaveControl = L.Control.extend({
-      onAdd: (map) => {
-        let container = document.createElement('div')
-        container.classList = 'leaflet-control leaflet-bar'
-        container.innerHTML = '<a href="#">S</a>'
-        container.addEventListener('click', e => {
-          let resultData = this.getResultGeoJSON()
-          console.log(JSON.stringify(resultData))
-          if (saveCallback !== undefined) {
-            saveCallback(resultData)
-          } else {
-            console.error('callback is undefined')
-          }
-        })
-        return container
-      },
-
-      onRemove: function (map) {
-        console.log('remove save control')
-      }
-    })
-    
-    L.EditControl = L.Control.extend({
-
-      options: {
-        position: 'topleft',
-        callback: null,
-        kind: '',
-        html: ''
-      },
-
-      onAdd: function (map) {
-        var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar'),
-          link = L.DomUtil.create('a', '', container);
-
-        link.href = '#';
-        link.title = 'Create a new ' + this.options.kind;
-        link.innerHTML = this.options.html;
-        L.DomEvent.on(link, 'click', L.DomEvent.stop)
-          .on(link, 'click', function () {
-            window.LAYER = this.options.callback.call(map.editTools);
-          }, this);
-
-        return container;
-      }
-    })
-
-    L.NewPolygonControl = L.EditControl.extend({ // TODO ограничение рисовать только одну фичу, если её нет и не рисовать, если уже нарисована
-      options: {
-          position: 'topleft',
-          callback: floorMap.editTools.startPolygon,
-          kind: 'polygon',
-          html: '▰'
-      }
-  })
-
-    floorMap.addControl(new L.NewPolygonControl());
-
-    L.control.saveControl = function(opts) {
-      return new L.Control.SaveControl(opts)
+  save () {
+    let resultData = this.getResultGeoJSON()
+    if (this.saveCallback !== undefined) {
+      this.saveCallback(resultData)
+    } else {
+      console.error('callback is undefined')
     }
+  }
 
-    L.control.saveControl({ position: 'topleft' }).addTo(floorMap)
+  drawNewPolygon () {
+    this.floorMap.editTools.startPolygon()
+  }
+
+  addEditControls(floorMap, saveCallback) {
+    
+  //   L.EditControl = L.Control.extend({
+
+  //     options: {
+  //       position: 'topleft',
+  //       callback: null,
+  //       kind: '',
+  //       html: ''
+  //     },
+
+  //     onAdd: function (map) {
+  //       var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar'),
+  //         link = L.DomUtil.create('a', '', container);
+
+  //       link.href = '#';
+  //       link.title = 'Create a new ' + this.options.kind;
+  //       link.innerHTML = this.options.html;
+  //       L.DomEvent.on(link, 'click', L.DomEvent.stop)
+  //         .on(link, 'click', function () {
+  //           window.LAYER = this.options.callback.call(map.editTools);
+  //         }, this);
+
+  //       return container;
+  //     }
+  //   })
+
+  //   L.NewPolygonControl = L.EditControl.extend({ // TODO ограничение рисовать только одну фичу, если её нет и не рисовать, если уже нарисована
+  //     options: {
+  //         position: 'topleft',
+  //         callback: floorMap.editTools.startPolygon,
+  //         kind: 'polygon',
+  //         html: '▰'
+  //     }
+  // })
+
+    // floorMap.addControl(new L.NewPolygonControl());
 
     // var deleteShape = function (e) { // удаление фигур
     //   if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) this.editor.deleteShapeAt(e.latlng);

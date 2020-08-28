@@ -7,8 +7,8 @@ class SomeComponent extends React.Component {
     super(props);
     this.state = {
       data: null,
-      // url: 'http://localhost:3000/floor',
-      url: 'http://rental.webworkers.pro/floor_plan/2',
+      url: 'http://localhost:3000/floor',
+      // url: 'http://rental.webworkers.pro/floor_plan/2',
       loading: true,
       savedData: null,
       lastHoveredFeature: null
@@ -20,7 +20,7 @@ class SomeComponent extends React.Component {
     this.setState({
       savedData: data
     })
-    console.log('this.state.savedData', this.state.savedData)
+    console.log('this.state.savedData', data)
   }
 
   onFeatureHoverCallback (feature) {
@@ -29,6 +29,10 @@ class SomeComponent extends React.Component {
     this.setState({
       lastHoveredFeature: feature
     })
+  }
+
+  onFeatureOutCallback (feature) {
+    console.log('mouse out', feature)
   }
 
   getData () {
@@ -59,6 +63,7 @@ class SomeComponent extends React.Component {
             mode={'editor'}
             onSave={data => this.onSaveCallback(data)}
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+            onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>
         <div style={{width: '48%', height: '720px'}}> 
@@ -67,6 +72,7 @@ class SomeComponent extends React.Component {
             mode={'viewer'}
             onSave={data => this.onSaveCallback(data)}
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+            onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>
       </div>
