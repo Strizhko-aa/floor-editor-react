@@ -7,7 +7,8 @@ class SomeComponent extends React.Component {
     super(props);
     this.state = {
       data: null,
-      url: 'http://localhost:3000/floor',
+      // url: 'http://localhost:3000/floor',
+      url: 'http://rental.webworkers.pro/floor_plan/2',
       loading: true,
       savedData: null,
       lastHoveredFeature: null
