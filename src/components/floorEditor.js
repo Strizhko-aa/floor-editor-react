@@ -1,71 +1,67 @@
 import L from 'leaflet'
-import axios from 'axios'
 import 'leaflet-editable'
 
 class floorEditor {
-  constructor () {
-    var floorMap,
-        sourceData,
-        lastUsedData
-
+  constructor (params) {
+    if (params.data === undefined) {
+      throw new Error('object with key "data" must be passed in constuctor')
+    }
+    this.floorMap = null
+    this.sourceData = params.data || null
+    this.lastUsedData = null
     this.historyCoordinates = []
     this.step = 0
-    
-    axios.get('http://localhost:3000/floor').then((response) => {
-      let options = {
-        type: 'editor' // viewer
-      }
-      this.initMap('map', response.data, options).then(succ => {
-        this.floorMap = succ
-      })
+
+    this.initMap('map', params.data, params.mode).then(succ => {
+      this.floorMap = succ
     })
   }
 
-
-
-  async initMap(blockId, data, options) { // TODO режимы просмотр/редактирование
-    this.sourceData = data
+  async initMap(blockId, data, mode) { // TODO режимы просмотр/редактирование
     let floorMap = L.map(blockId, {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
-      editable: options.type === 'editor',
+      editable: mode === 'editor',
       minZoom: -1
     })
-    console.log('data', data)
     
     let imageUrl = data.plan_rooms.content.plan_file // устанавливаем изображение чтобы оно не исказилось и помещалось в координаты 1000 х 1000
     let bounds = await this.getBounds(imageUrl)
     L.imageOverlay(imageUrl, bounds).addTo(floorMap)
     floorMap.fitBounds(bounds)
 
-    if (options !== undefined && options.type === 'editor') {
+    if (mode === 'editor') {
       this.addEditControls(floorMap)
     }
 
+    this.historyCoordinates.push(data)
+    this.step = this.historyCoordinates.length - 1
+
     this.initBaseData(floorMap, data)
     this.initEvents(floorMap)
+    
 
     return floorMap
   }
 
   initEvents (floorMap) {
     floorMap.on('editable:drawing:end', e => {
+      this.historyCoordinates.splice(1)
       let newData = this.getResultGeoJSON()
+      this.historyCoordinates.push(newData)
+      this.step = this.historyCoordinates.length - 1
       this.initBaseData(floorMap, newData)
     })
 
     floorMap.on('editable:vertex:dragend', e => {
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
-      this.step++
-      console.log('History:', this.historyCoordinates)
-      console.log('Step:', this.step)
+      this.step = this.historyCoordinates.length - 1
     })
   
     floorMap.on('editable:vertex:deleted', e => {
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
-      this.step++
-      console.log(this.historyCoordinates)
+      this.step = this.historyCoordinates.length - 1
     })
 
     floorMap.on('editable:editing', e => {
@@ -197,13 +193,13 @@ class floorEditor {
       let editablePolygonIndex = _sourceDataCopy.plan_rooms.coordinates.features.findIndex(_feature => {
         return _feature.properties.is_mutable
       })
-
+      
       if (editablePolygonIndex !== -1) {
         _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = addedData.toGeoJSON().geometry
       }
       
       this.lastUsedData = _sourceDataCopy
-      console.log(_sourceDataCopy)
+      // console.log(_sourceDataCopy)
       newData = _sourceDataCopy // выход из floorMap.eachLayer
     }
 
@@ -212,6 +208,24 @@ class floorEditor {
 
   isAddedFeature (layer) {
     return '_events' in layer && !('_image' in layer) && 'editOptions' in layer.options
+  }
+
+  undoHistory() {
+    if (this.step !== 0) {
+      this.step--
+      let newData = this.historyCoordinates[this.step]
+      this.initBaseData(this.floorMap, newData)
+      this.lastUsedData = newData
+    }
+  }
+
+  repeatHistory() {
+    if (this.step < (this.historyCoordinates.length - 1)) {
+      this.step++
+      let newData = this.historyCoordinates[this.step]
+      this.initBaseData(this.floorMap, newData)
+      this.lastUsedData = newData
+    }
   }
 
   addEditControls(floorMap) {

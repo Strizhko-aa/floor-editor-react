@@ -1,11 +1,11 @@
 import React from 'react';
-import FloorEditor from './components/floorEditorComponent'
+import SomeComponent from './components/someComponent'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <FloorEditor/>
+      <SomeComponent/>
     </div>
   );
 }
