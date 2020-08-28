@@ -36,7 +36,6 @@ class floorEditor {
     if (this.mode === 'editor') {
       this.addEditControls(floorMap)
     } else {
-      console.log(document.getElementById('control_' + blockId))
       document.getElementById('control_' + blockId).style.display = 'none'
     }
 
@@ -51,6 +50,13 @@ class floorEditor {
   }
 
   initEvents (floorMap) {
+    // floorMap.on('keyup', _e => {
+    //   let e = _e.originalEvent
+    //   console.log(e.keyCode, e.ctrlKey)
+    //   if (e.keyCode === 90 && e.ctrlKey) {
+    //     this.undoHistory()
+    //   }
+    // })
     floorMap.on('editable:drawing:end', e => {
       this.historyCoordinates.splice(this.step + 1)
       let newData = this.getResultGeoJSON()
@@ -163,7 +169,7 @@ class floorEditor {
         }
         img.src = imageUrl
       } catch (error) {
-        console.log('can\'t get image size to create bounds', error)
+        console.error('can\'t get image size to create bounds', error)
         resolve([[0,0], [1000, 1000]])
       }
     })
@@ -218,7 +224,6 @@ class floorEditor {
       }
       
       this.lastUsedData = _sourceDataCopy
-      // console.log(_sourceDataCopy)
       newData = _sourceDataCopy // выход из floorMap.eachLayer
     }
 
@@ -261,42 +266,6 @@ class floorEditor {
   }
 
   addEditControls(floorMap, saveCallback) {
-    
-  //   L.EditControl = L.Control.extend({
-
-  //     options: {
-  //       position: 'topleft',
-  //       callback: null,
-  //       kind: '',
-  //       html: ''
-  //     },
-
-  //     onAdd: function (map) {
-  //       var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar'),
-  //         link = L.DomUtil.create('a', '', container);
-
-  //       link.href = '#';
-  //       link.title = 'Create a new ' + this.options.kind;
-  //       link.innerHTML = this.options.html;
-  //       L.DomEvent.on(link, 'click', L.DomEvent.stop)
-  //         .on(link, 'click', function () {
-  //           window.LAYER = this.options.callback.call(map.editTools);
-  //         }, this);
-
-  //       return container;
-  //     }
-  //   })
-
-  //   L.NewPolygonControl = L.EditControl.extend({ // TODO ограничение рисовать только одну фичу, если её нет и не рисовать, если уже нарисована
-  //     options: {
-  //         position: 'topleft',
-  //         callback: floorMap.editTools.startPolygon,
-  //         kind: 'polygon',
-  //         html: '▰'
-  //     }
-  // })
-
-    // floorMap.addControl(new L.NewPolygonControl());
 
     // var deleteShape = function (e) { // удаление фигур
     //   if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) this.editor.deleteShapeAt(e.latlng);
