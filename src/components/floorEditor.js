@@ -11,13 +11,13 @@ class floorEditor {
     this.lastUsedData = null
     this.mode = params.mode === 'editor' ? params.mode : 'viewer'
     this.featureHoverCallback = params.featureHoverCallback
+    this.historyCoordinates = []
+    this.step = 0
 
     this.initMap(params.blockId, params.data, params.saveCallback).then(succ => {
       this.floorMap = succ
     })
   }
-
-
 
   async initMap(blockId, data, saveCallback) { 
     let floorMap = L.map(blockId, {
@@ -33,18 +33,40 @@ class floorEditor {
 
     if (this.mode === 'editor') {
       this.addEditControls(floorMap, saveCallback)
+    } else {
+      console.log(document.getElementById('control_' + blockId))
+      document.getElementById('control_' + blockId).style.display = 'none'
     }
+
+    this.historyCoordinates.push(data)
+    this.step = this.historyCoordinates.length - 1
 
     this.initBaseData(floorMap, data)
     this.initEvents(floorMap)
+    
 
     return floorMap
   }
 
   initEvents (floorMap) {
     floorMap.on('editable:drawing:end', e => {
+      this.historyCoordinates.splice(this.step + 1)
       let newData = this.getResultGeoJSON()
+      this.historyCoordinates.push(newData)
+      this.step = this.historyCoordinates.length - 1
       this.initBaseData(floorMap, newData)
+    })
+
+    floorMap.on('editable:vertex:dragend', e => {
+      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.push(this.getResultGeoJSON())
+      this.step = this.historyCoordinates.length - 1
+    })
+  
+    floorMap.on('editable:vertex:deleted', e => {
+      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.push(this.getResultGeoJSON())
+      this.step = this.historyCoordinates.length - 1
     })
 
     floorMap.on('editable:editing', e => {
@@ -184,13 +206,13 @@ class floorEditor {
       let editablePolygonIndex = _sourceDataCopy.plan_rooms.coordinates.features.findIndex(_feature => {
         return _feature.properties.is_mutable
       })
-
+      
       if (editablePolygonIndex !== -1) {
         _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = addedData.toGeoJSON().geometry
       }
       
       this.lastUsedData = _sourceDataCopy
-      console.log(_sourceDataCopy)
+      // console.log(_sourceDataCopy)
       newData = _sourceDataCopy // выход из floorMap.eachLayer
     }
 
@@ -199,6 +221,24 @@ class floorEditor {
 
   isAddedFeature (layer) {
     return '_events' in layer && !('_image' in layer) && 'editOptions' in layer.options
+  }
+
+  undoHistory() {
+    if (this.step !== 0) {
+      this.step--
+      let newData = this.historyCoordinates[this.step]
+      this.initBaseData(this.floorMap, newData)
+      this.lastUsedData = newData
+    }
+  }
+
+  repeatHistory() {
+    if (this.step < (this.historyCoordinates.length - 1)) {
+      this.step++
+      let newData = this.historyCoordinates[this.step]
+      this.initBaseData(this.floorMap, newData)
+      this.lastUsedData = newData
+    }
   }
 
   addEditControls(floorMap, saveCallback) {
@@ -303,6 +343,9 @@ class floorEditor {
     if (_layerWithData !== null) {
       _layerWithData.feature.properties[propertyName] = !_layerWithData.feature.properties[propertyName]
       this.addTooltip(_layerWithData)
+      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.push(this.getResultGeoJSON())
+      this.step = this.historyCoordinates.length - 1
     }
   }
 }

@@ -50,18 +50,24 @@ class SomeComponent extends React.Component {
     if (loading) {
       mapComponent = <div>loading map ...</div>
     } else {
-      mapComponent = <div style={{display: 'flex', justifyContent: "space-between"}}> 
-        <FloorEditor
-          data={this.state.data}
-          mode={'editor'}
-          onSave={data => this.onSaveCallback(data)}
-          onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
-        />
-        <FloorEditor
-          data={this.state.data}
-          mode={'viewer'}
-          onSave={data => this.onSaveCallback(data)}
-        />
+      mapComponent = 
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div style={{width: '720px', height: '720px'}}> 
+          <FloorEditor
+            data={this.state.data}
+            mode={'editor'}
+            onSave={data => this.onSaveCallback(data)}
+            onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+          />
+        </div>
+        <div style={{width: '720px', height: '720px'}}> 
+          <FloorEditor
+            data={this.state.data}
+            mode={'viewer'}
+            onSave={data => this.onSaveCallback(data)}
+            onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+          />
+        </div>
       </div>
     }
     return mapComponent
