@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import FloorEditor from './floorEditorComponent'
+import FloorEditor from './floorEditorComponent';
+import testData from './testData.json'
 
 class SomeComponent extends React.Component {
   constructor(props) {
@@ -36,12 +37,17 @@ class SomeComponent extends React.Component {
   }
 
   getData () {
-    axios.get(this.state.url).then((response) => {
-      console.log('response', response)
-      this.setState({
-        data: response.data,
-        loading: false
-      })
+    // axios.get(this.state.url).then((response) => {
+    //   console.log('response', response)
+    //   this.setState({
+    //     data: response.data,
+    //     loading: false
+    //   })
+    // })
+
+    this.setState({
+      data: testData,
+      loading: false
     })
   }
 
