@@ -52,7 +52,7 @@ class SomeComponent extends React.Component {
     } else {
       mapComponent = 
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <div style={{width: '720px', height: '720px'}}> 
+        <div style={{width: '48%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data}
             mode={'editor'}
@@ -60,7 +60,7 @@ class SomeComponent extends React.Component {
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
           />
         </div>
-        <div style={{width: '720px', height: '720px'}}> 
+        <div style={{width: '48%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data}
             mode={'viewer'}

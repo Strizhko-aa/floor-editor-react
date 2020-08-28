@@ -9,7 +9,14 @@
 }
 
 .app-control {
-   padding: 10px 30px;
+   margin-top: 72px;
+   padding: 10px 25px;
+   background-color: #f9f9f9;
+   border-top: 1px solid #e7e7e8;
+}
+
+.toggle-property {
+   margin-left: 15px;
 }
 
 .map-wrapper {
@@ -17,28 +24,106 @@
    height: 100%;
 }
 
+.divider {
+   height: 27px;
+   width: 1px;
+   background-color: #d0d0d0;
+   margin: 1px 5px;
+}
+
+.begin-drawing {
+   padding: 6px 10px 5px;
+   border: 1px solid transparent;
+   background-color: transparent;
+}
+
+.save-changes {
+   display: inline-block;
+   margin-right: 10px;
+   padding: 9px 15px;
+   border: none;
+   color: #fff;
+   background-color: #007bff;
+   border-radius: 3px;
+   font-size: 14px;
+   cursor: pointer;
+   transition: .3s;
+}
+
+.save-changes:hover {
+   background-color: #4d9df3;
+}
+
+.begin-drawing,
 .history-button {
+   display: inline-block;
+   vertical-align: middle;
    color: #ffffff;
    flex: none;
-   padding: 6px 12px;
-   border: none;
-   background-color: #007bff;
+   padding: 6px 10px 5px;
+   border: 1px solid transparent;
+   background-color: transparent;
    border-radius: 4px;
    transition: .3s;
    outline: none;
    cursor: pointer;
-   margin-right: 15px;
+   margin-right: 1px;
 }
 
+.begin-drawing:hover,
 .history-button:hover {
-   background-color: #0069d9;
+   background-color: #fff;
+   border-color: #007bff;
 }
 
-.history-button:focus {
-   border: none;
-   box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+.begin-drawing svg,
+.history-button svg {
+   fill: #646464;
+   transition: .3s;
+}
+
+.begin-drawing:hover svg,
+.history-button:hover svg {
+   fill: #007bff
 }
 
 .input-wrapper {
-   margin-right: 15px;
+   position: relative;
+   margin-left: 15px;
+   margin-right: 20px;
+}
+
+.property-label {
+   cursor: pointer;
+}
+
+.property-label:before {
+   position: absolute;
+   content: "";
+   top: 2px;
+   left: -23px;
+   border: 1px solid #d0d0d0;
+   border-radius: 3px;
+   width: 16px;
+   height: 16px;
+   background-color: #fff;
+   transition: .3s;
+}
+
+.property-label:after {
+   position: absolute;
+   content: '\2714';
+   top: 0;
+   left: -20px;
+   opacity: 0;
+   color: #646464;
+   transition: .3s;
+}
+
+.property-input:checked + .property-label:after {
+   opacity: 1;
+}
+
+.property-input:checked + .property-label:before {
+   border: 1px solid #007bff;
 }
