@@ -9,18 +9,20 @@ class floorEditor {
     this.floorMap = null
     this.sourceData = params.data || null
     this.lastUsedData = null
+    this.mode = params.mode === 'editor' ? params.mode : 'viewer'
+    this.featureHoverCallback = params.featureHoverCallback
 
-    this.initMap('map', params.data, params.mode).then(succ => {
+    this.initMap(params.blockId, params.data, params.saveCallback).then(succ => {
       this.floorMap = succ
     })
   }
 
 
 
-  async initMap(blockId, data, mode) { // TODO режимы просмотр/редактирование
+  async initMap(blockId, data, saveCallback) { 
     let floorMap = L.map(blockId, {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
-      editable: mode === 'editor',
+      editable: this.mode === 'editor',
       minZoom: -1
     })
     
@@ -29,8 +31,8 @@ class floorEditor {
     L.imageOverlay(imageUrl, bounds).addTo(floorMap)
     floorMap.fitBounds(bounds)
 
-    if (mode === 'editor') {
-      this.addEditControls(floorMap)
+    if (this.mode === 'editor') {
+      this.addEditControls(floorMap, saveCallback)
     }
 
     this.initBaseData(floorMap, data)
@@ -53,7 +55,7 @@ class floorEditor {
     })
   }
 
-  initBaseData (floorMap, data) { // TODO событие наведения на фичу
+  initBaseData (floorMap, data) {
     this.clearOldLayers(floorMap)
     let baseDataLayer = L.geoJSON(data.plan_rooms.coordinates)
     baseDataLayer.id = 'baseData' // добавляем ид к изначальным данным чтобы потом их можно было найти
@@ -64,11 +66,19 @@ class floorEditor {
           color: layer.feature.properties.color
         })
       }
-      this.addTooltip(layer)
-      if (layer.feature.properties.is_mutable) {
-        if (!!layer.feature.geometry.coordinates) {
-          layer.enableEdit()
-          layer.setStyle({color: layer.feature.properties.color || 'blue'})
+
+      this.addTooltip(layer) // добавляем подписи на фичи
+      if (this.featureHoverCallback !== undefined) {
+        let _call = this.featureHoverCallback
+        layer.on('mouseover', e => { _call(e)})
+      }
+
+      if (this.mode === 'editor') { // включаем редактирование объекта
+        if (layer.feature.properties.is_mutable) { // если это объект, который можно редактировать
+          if (!!layer.feature.geometry.coordinates) { // и у него есть координаты
+            layer.enableEdit()
+            // layer.setStyle({color: layer.feature.properties.color || 'blue'})
+          }
         }
       }
     })
@@ -131,7 +141,7 @@ class floorEditor {
     })
   }
 
-  getResultGeoJSON () { // TODO добавление координат созданной фичи
+  getResultGeoJSON () {
     let addedData = null
     let _sourceDataCopy = JSON.parse(JSON.stringify(this.lastUsedData || this.sourceData))
     let newData = null
@@ -191,16 +201,21 @@ class floorEditor {
     return '_events' in layer && !('_image' in layer) && 'editOptions' in layer.options
   }
 
-  addEditControls(floorMap) {
+  addEditControls(floorMap, saveCallback) {
 
     L.Control.SaveControl = L.Control.extend({
-      onAdd: function (map) {
+      onAdd: (map) => {
         let container = document.createElement('div')
         container.classList = 'leaflet-control leaflet-bar'
         container.innerHTML = '<a href="#">S</a>'
         container.addEventListener('click', e => {
-          let resultData = this.getResultGeoJSON() // TODO принимать callback
+          let resultData = this.getResultGeoJSON()
           console.log(JSON.stringify(resultData))
+          if (saveCallback !== undefined) {
+            saveCallback(resultData)
+          } else {
+            console.error('callback is undefined')
+          }
         })
         return container
       },
@@ -259,6 +274,36 @@ class floorEditor {
     //     if (e.layer instanceof L.Path) e.layer.on('click', L.DomEvent.stop).on('click', deleteShape, e.layer);
     //     if (e.layer instanceof L.Path) e.layer.on('dblclick', L.DomEvent.stop).on('dblclick', e.layer.toggleEdit);
     // })
+  }
+
+  getEditableLayer () {
+    let _layerWithData = null
+    this.floorMap.eachLayer(_layer => {
+      if (_layer.id === 'baseData') {
+        _layerWithData = _layer
+        return
+      }
+    })
+
+    let _editableLayer = null
+    if (_layerWithData !== null) {
+      _layerWithData.eachLayer(_layer => {
+        if (_layer.feature.properties.is_mutable) {
+          _editableLayer = _layer
+          return
+        }
+      })
+    }
+    return _editableLayer
+  }
+
+  toggleProperty (propertyName) {
+    let _layerWithData = this.getEditableLayer()
+
+    if (_layerWithData !== null) {
+      _layerWithData.feature.properties[propertyName] = !_layerWithData.feature.properties[propertyName]
+      this.addTooltip(_layerWithData)
+    }
   }
 }
 

@@ -9,14 +9,25 @@ class SomeComponent extends React.Component {
       data: null,
       url: 'http://localhost:3000/floor',
       loading: true,
-      options: {
-        type: 'editor'
-      }
+      savedData: null,
+      lastHoveredFeature: null
     }
   }
 
   onSaveCallback (data) {
-    console.log('save callback', data)
+    // some code with edited data
+    this.setState({
+      savedData: data
+    })
+    console.log('this.state.savedData', this.state.savedData)
+  }
+
+  onFeatureHoverCallback (feature) {
+    // do some with hovered feature
+    console.log('feature from component', feature)
+    this.setState({
+      lastHoveredFeature: feature
+    })
   }
 
   getData () {
@@ -39,11 +50,17 @@ class SomeComponent extends React.Component {
     if (loading) {
       mapComponent = <div>loading map ...</div>
     } else {
-      mapComponent = <div> 
+      mapComponent = <div style={{display: 'flex', justifyContent: "space-between"}}> 
         <FloorEditor
           data={this.state.data}
           mode={'editor'}
-          // onSave={() => this.onSaveCallback}
+          onSave={data => this.onSaveCallback(data)}
+          onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+        />
+        <FloorEditor
+          data={this.state.data}
+          mode={'viewer'}
+          onSave={data => this.onSaveCallback(data)}
         />
       </div>
     }

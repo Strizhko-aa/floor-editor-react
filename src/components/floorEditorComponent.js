@@ -6,7 +6,8 @@ class FloorEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      map: null
+      fe: null,
+      blockForMap: 'MapContainer_' + Math.floor(Math.random() * Math.floor(10000))
     }
   }
 
@@ -14,12 +15,19 @@ class FloorEditor extends React.Component {
     const _val = new floorEditor(
       {
         data: this.props.data,
-        mode: 'editor'
+        mode: this.props.mode,
+        saveCallback: this.props.onSave,
+        featureHoverCallback: this.props.onFeatureHover,
+        blockId: this.state.blockForMap
       }
     )
     this.setState({
-      map: _val
+      fe: _val
     })
+  }
+
+  toggleName (property) {
+    this.state.fe.toggleProperty(property)
   }
 
   componentDidMount () {
@@ -29,8 +37,9 @@ class FloorEditor extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => {this.myFunc()}}>click</button>
-        <div id="map" style={{width: '900px', height: '900px'}}/>
+        <button onClick={() => {this.toggleName('is_hide_name')}}>name</button>
+        <button onClick={() => {this.toggleName('is_hide_area')}}>area</button>
+        <div id={this.state.blockForMap} style={{width: '900px', height: '900px'}}/>
       </div>
     )
   }
