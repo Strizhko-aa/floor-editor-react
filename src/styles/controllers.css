@@ -30,7 +30,8 @@
    margin: 1px 5px;
 }
 
-.begin-drawing {
+.begin-drawing,
+.remove-drawing {
    padding: 6px 10px 5px;
    border: 1px solid transparent;
    background-color: transparent;
@@ -54,6 +55,7 @@
 }
 
 .begin-drawing,
+.remove-drawing,
 .history-button {
    display: inline-block;
    vertical-align: middle;
@@ -70,18 +72,21 @@
 }
 
 .begin-drawing:hover,
+.remove-drawing:hover,
 .history-button:hover {
    background-color: #fff;
    border-color: #007bff;
 }
 
 .begin-drawing svg,
+.remove-drawing svg,
 .history-button svg {
    fill: #646464;
    transition: .3s;
 }
 
 .begin-drawing:hover svg,
+.remove-drawing:hover svg,
 .history-button:hover svg {
    fill: #007bff
 }
@@ -93,6 +98,7 @@
 }
 
 .property-label {
+   user-select: none;
    cursor: pointer;
 }
 

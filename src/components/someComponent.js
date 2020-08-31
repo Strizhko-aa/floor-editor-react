@@ -26,14 +26,14 @@ class SomeComponent extends React.Component {
 
   onFeatureHoverCallback (feature) {
     // do some with hovered feature
-    console.log('feature from component', feature)
+    // console.log('feature from component', feature)
     this.setState({
       lastHoveredFeature: feature
     })
   }
 
   onFeatureOutCallback (feature) {
-    console.log('mouse out', feature)
+    // console.log('mouse out', feature)
   }
 
   getData () {
@@ -63,7 +63,7 @@ class SomeComponent extends React.Component {
     } else {
       mapComponent = 
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <div style={{width: '48%', height: '720px'}}> 
+        <div style={{width: '50%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data}
             mode={'editor'}
@@ -72,7 +72,7 @@ class SomeComponent extends React.Component {
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>
-        <div style={{width: '48%', height: '720px'}}> 
+        <div style={{width: '49%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data}
             mode={'viewer'}

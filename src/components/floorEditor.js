@@ -32,7 +32,7 @@ class floorEditor {
       editable: this.mode === 'editor',
       minZoom: -1
     })
-    
+
     let imageUrl = data.plan_rooms.content.plan_file // устанавливаем изображение чтобы оно не исказилось и помещалось в координаты 1000 х 1000
     let bounds = await this.getBounds(imageUrl)
     L.imageOverlay(imageUrl, bounds).addTo(floorMap)
@@ -40,6 +40,7 @@ class floorEditor {
 
     if (this.mode === 'editor') {
       this.addEditControls(floorMap)
+      this.initEvents(floorMap)
     } else {
       document.getElementById('control_' + blockId).style.display = 'none'
     }
@@ -48,20 +49,24 @@ class floorEditor {
     this.step = this.historyCoordinates.length - 1
 
     this.initBaseData(floorMap, data, true)
-    this.initEvents(floorMap)
+    // this.initEvents(floorMap)
     
 
     return floorMap
   }
 
   initEvents (floorMap) {
-    // floorMap.on('keyup', _e => {
-    //   let e = _e.originalEvent
-    //   console.log(e.keyCode, e.ctrlKey)
-    //   if (e.keyCode === 90 && e.ctrlKey) {
-    //     this.undoHistory()
-    //   }
-    // })
+    floorMap.on('keyup', _e => {
+      let e = _e.originalEvent
+      console.log(_e)
+      if (e.keyCode === 90 && e.ctrlKey) {
+        // console.log(e.keyCode, e.ctrlKey)
+        this.undoHistory()
+      } else if (e.keyCode === 89 && e.ctrlKey) {
+        this.repeatHistory()
+      }
+    })
+
     floorMap.on('editable:drawing:end', e => {
       this.historyCoordinates.splice(this.step + 1)
       let newData = this.getResultGeoJSON()
@@ -259,6 +264,21 @@ class floorEditor {
       this.lastUsedData = newData
     }
   }
+
+  /* _ctrz () {
+    let q = document.querySelector('.map-wrapper')
+    console.log(q)
+    q[0].on('keyup', _e => {
+      let e = _e.originalEvent
+      console.log(e.keyCode, e.ctrlKey)
+      if (e.keyCode === 90 && e.ctrlKey) {
+        console.log(e.keyCode, e.ctrlKey)
+        this.undoHistory()
+      } else if (e.keyCode === 89 && e.ctrlKey) {
+        this.repeatHistory()
+      }
+    })
+  } */
 
   repeatHistory() {
     if (this.step < (this.historyCoordinates.length - 1)) {
