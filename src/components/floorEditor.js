@@ -199,7 +199,7 @@ class floorEditor {
     })
   }
 
-  getResultGeoJSON () {
+  getResultGeoJSON (saveHook) {
     let addedData = null
     let _sourceDataCopy = JSON.parse(JSON.stringify(this.lastUsedData || this.sourceData))
     let newData = null
@@ -228,6 +228,11 @@ class floorEditor {
               return _feature.properties.is_mutable
             })
             _sourceDataCopy.plan_rooms.coordinates.features[featureIndex].geometry = changedFeature.geometry
+            if (saveHook) {
+              _sourceDataCopy.plan_rooms.coordinates.features[featureIndex].properties.is_hide_name = this.viewStyle.isHideName
+              _sourceDataCopy.plan_rooms.coordinates.features[featureIndex].properties.is_hide_area = this.viewStyle.isHideArea
+              _sourceDataCopy.plan_rooms.coordinates.features[featureIndex].properties.is_opaque = this.viewStyle.isOpaque
+            }
           }
           this.lastUsedData = _sourceDataCopy
           newData = _sourceDataCopy // выход из floorMap.eachLayer
@@ -248,6 +253,11 @@ class floorEditor {
           _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = null
         } else {
           _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = addedData.toGeoJSON().geometry
+        }
+        if (saveHook) {
+          _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].properties.is_hide_name = this.viewStyle.isHideName
+          _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].properties.is_hide_area = this.viewStyle.isHideArea
+          _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].properties.is_opaque = this.viewStyle.isOpaque
         }
       }
       
@@ -281,11 +291,11 @@ class floorEditor {
   }
 
   save () {
-    let resultData = this.getResultGeoJSON()
+    let resultData = this.getResultGeoJSON(true)
     if (this.saveCallback !== undefined) {
       this.saveCallback(resultData)
     } else {
-      console.error('callback is undefined')
+      console.error('save callback is undefined')
     }
   }
 
@@ -348,16 +358,19 @@ class floorEditor {
         case 'is_hide_name':
           this.viewStyle.isHideName = !this.viewStyle.isHideName
           this.addTooltip(_layerWithData)
+          this.setCheckboxFunc('isHideName', this.viewStyle.isHideName)
           break
 
         case 'is_hide_area':
           this.viewStyle.isHideArea = !this.viewStyle.isHideArea
           this.addTooltip(_layerWithData)
+          this.setCheckboxFunc('isHideArea', this.viewStyle.isHideArea)
           break
 
         case 'is_opaque':
           this.viewStyle.isOpaque = !this.viewStyle.isOpaque
           this.setStyle(_layerWithData)
+          this.setCheckboxFunc('isOpaque', this.viewStyle.isOpaque)
           break
         
         default:
