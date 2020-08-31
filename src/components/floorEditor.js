@@ -40,7 +40,7 @@ class floorEditor {
     floorMap.fitBounds(bounds)
 
     if (this.mode === 'editor') {
-      this.addEditControls(floorMap)
+      // this.addEditControls(floorMap)
       this.initEvents(floorMap)
     } else {
       document.getElementById('control_' + blockId).style.display = 'none'
@@ -59,9 +59,7 @@ class floorEditor {
   initEvents (floorMap) {
     floorMap.on('keyup', _e => {
       let e = _e.originalEvent
-      console.log(_e)
       if (e.keyCode === 90 && e.ctrlKey) {
-        // console.log(e.keyCode, e.ctrlKey)
         this.undoHistory()
       } else if (e.keyCode === 89 && e.ctrlKey) {
         this.repeatHistory()
@@ -246,7 +244,11 @@ class floorEditor {
       })
       
       if (editablePolygonIndex !== -1) {
-        _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = addedData.toGeoJSON().geometry
+        if (addedData === null) {
+          _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = null
+        } else {
+          _sourceDataCopy.plan_rooms.coordinates.features[editablePolygonIndex].geometry = addedData.toGeoJSON().geometry
+        }
       }
       
       this.lastUsedData = _sourceDataCopy
@@ -268,21 +270,6 @@ class floorEditor {
       this.lastUsedData = newData
     }
   }
-
-  /* _ctrz () {
-    let q = document.querySelector('.map-wrapper')
-    console.log(q)
-    q[0].on('keyup', _e => {
-      let e = _e.originalEvent
-      console.log(e.keyCode, e.ctrlKey)
-      if (e.keyCode === 90 && e.ctrlKey) {
-        console.log(e.keyCode, e.ctrlKey)
-        this.undoHistory()
-      } else if (e.keyCode === 89 && e.ctrlKey) {
-        this.repeatHistory()
-      }
-    })
-  } */
 
   repeatHistory() {
     if (this.step < (this.historyCoordinates.length - 1)) {
@@ -336,6 +323,21 @@ class floorEditor {
       })
     }
     return _editableLayer
+  }
+
+  removeEditableObject () {
+    let data = JSON.parse(JSON.stringify(this.lastUsedData || this.sourceData))
+    let i = data.plan_rooms.coordinates.features.findIndex(feature => {
+      return feature.properties.is_mutable
+    })
+    if (i === -1 || data.plan_rooms.coordinates.features[i].geometry === null) {
+      return
+    }
+    data.plan_rooms.coordinates.features[i].geometry = null
+    this.lastUsedData = data
+    this.historyCoordinates.push(data)
+    this.step = this.historyCoordinates.length - 1
+    this.initBaseData(this.floorMap, data)
   }
 
   toggleProperty (propertyName) {
