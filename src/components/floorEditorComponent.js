@@ -8,7 +8,10 @@ class FloorEditor extends React.Component {
     super(props);
     this.state = {
       fe: null,
-      blockForMap: 'MapContainer_' + Math.floor(Math.random() * Math.floor(10000))
+      blockForMap: 'MapContainer_' + Math.floor(Math.random() * Math.floor(10000)),
+      isOpaque: false,
+      isHideName: false,
+      isHideArea: false
     }
     this.historyCoordinates = [];
     this.step = 0;
@@ -22,9 +25,13 @@ class FloorEditor extends React.Component {
     this.state.fe.undoHistory()
   }
 
-  /* ctrz () {
-    this.state.fe._ctrz()
-  } */
+  setCheckbox(name, value) {
+    console.log(name, value)
+    this.setState({
+      [name]: value
+    })
+    console.log(this.state.isOpaque)
+  }
 
   repeat () {
     this.state.fe.repeatHistory()
@@ -42,7 +49,8 @@ class FloorEditor extends React.Component {
         saveCallback: this.props.onSave,
         featureHoverCallback: this.props.onFeatureHover,
         featureOutCallback: this.props.onFeatureOut,
-        blockId: this.state.blockForMap
+        blockId: this.state.blockForMap,
+        setCheckboxFunc: (a,b) => this.setCheckbox(a,b),
       }
     )
     this.setState({
@@ -58,10 +66,6 @@ class FloorEditor extends React.Component {
     this.state.fe.drawNewPolygon()
   }
 
-  onkeypress (e) {
-    console.log(e)
-  }
-
   componentDidMount () {
     this.initMap()
   }
@@ -70,7 +74,7 @@ class FloorEditor extends React.Component {
     let _mode = this.props.mode
     return (
       <div className="map-wrapper">
-        <div className="app-control" id={'control_' + this.state.blockForMap} onKeyUpCapture={(e) => {this.onkeypress(e)}}>
+        <div className="app-control" id={'control_' + this.state.blockForMap}>
           <button className="save-changes" onClick={() => {this.save()}}>Сохранить изменения</button>
           <div className="divider"></div>
           <button className="begin-drawing" title="Создать" onClick={() => {this.drawNewPolygon()}}>
@@ -100,15 +104,15 @@ class FloorEditor extends React.Component {
           <div className="divider"></div>
           <div className="toggle-property">
             <div className="input-wrapper">
-              <input className="property-input" onClick={() => {this.toggleProperty('is_opaque')}} hidden id="hide-bg" type="checkbox"/>
+              <input className="property-input" readOnly checked={this.state.isOpaque} onClick={() => {this.toggleProperty('is_opaque')}} hidden id="hide-bg" type="checkbox"/>
               <label className="property-label" htmlFor="hide-bg">Непрозрачный фон</label>
             </div>
             <div className="input-wrapper">
-              <input className="property-input" hidden onClick={() => {this.toggleProperty('is_hide_name')}} id="hide-title" type="checkbox"/>
+              <input className="property-input" readOnly checked={this.state.isHideName} hidden onClick={() => {this.toggleProperty('is_hide_name')}} id="hide-title" type="checkbox"/>
               <label className="property-label" htmlFor="hide-title">Скрыть название</label>
             </div>
             <div className="input-wrapper">
-              <input className="property-input" hidden onClick={() => {this.toggleProperty('is_hide_area')}} id="hide-area" type="checkbox"/>
+              <input className="property-input" readOnly checked={this.state.isHideArea} hidden onClick={() => {this.toggleProperty('is_hide_area')}} id="hide-area" type="checkbox"/>
               <label className="property-label" htmlFor="hide-area">Скрыть площадь</label>
             </div>
           </div>

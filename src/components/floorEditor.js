@@ -15,6 +15,7 @@ class floorEditor {
     this.saveCallback = params.saveCallback
     this.historyCoordinates = []
     this.step = 0
+    this.setCheckboxFunc = params.setCheckboxFunc
     this.viewStyle = {
       isHideName: false,
       isHideArea: false,
@@ -116,6 +117,9 @@ class floorEditor {
           this.viewStyle.isHideName = layer.feature.properties.is_hide_name
           this.viewStyle.isHideArea = layer.feature.properties.is_hide_area
           this.viewStyle.isOpaque = layer.feature.properties.is_opaque
+          this.setCheckboxFunc('isHideName', this.viewStyle.isHideName)
+          this.setCheckboxFunc('isHideArea', this.viewStyle.isHideArea)
+          this.setCheckboxFunc('isOpaque', this.viewStyle.isOpaque)
         }
         if (this.mode === 'editor') { // если мод "редактирование"
           if (!!layer.feature.geometry.coordinates) { // и у фичи есть координаты
