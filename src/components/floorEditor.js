@@ -15,6 +15,11 @@ class floorEditor {
     this.saveCallback = params.saveCallback
     this.historyCoordinates = []
     this.step = 0
+    this.viewStyle = {
+      isHideName: false,
+      isHideArea: false,
+      isOpaque: false
+    }
 
     this.initMap(params.blockId, params.data).then(succ => {
       this.floorMap = succ
@@ -42,7 +47,7 @@ class floorEditor {
     this.historyCoordinates.push(data)
     this.step = this.historyCoordinates.length - 1
 
-    this.initBaseData(floorMap, data)
+    this.initBaseData(floorMap, data, true)
     this.initEvents(floorMap)
     
 
@@ -62,7 +67,7 @@ class floorEditor {
       let newData = this.getResultGeoJSON()
       this.historyCoordinates.push(newData)
       this.step = this.historyCoordinates.length - 1
-      this.initBaseData(floorMap, newData)
+      this.initBaseData(floorMap, newData, true)
     })
 
     floorMap.on('editable:vertex:dragend', e => {
@@ -85,19 +90,13 @@ class floorEditor {
     })
   }
 
-  initBaseData (floorMap, data) {
+  initBaseData (floorMap, data, initHook) {
     this.clearOldLayers(floorMap)
     let baseDataLayer = L.geoJSON(data.plan_rooms.coordinates)
     baseDataLayer.id = 'baseData' // добавляем ид к изначальным данным чтобы потом их можно было найти
     baseDataLayer.addTo(floorMap)
     baseDataLayer.eachLayer(layer => {
-      if (layer.feature.properties.color) { // цвета полигонов
-        layer.setStyle({
-          color: layer.feature.properties.color
-        })
-      }
 
-      this.addTooltip(layer) // добавляем подписи на фичи
       if (this.featureHoverCallback !== undefined) {
         let _call = this.featureHoverCallback
         layer.on('mouseover', e => { _call(e)})
@@ -107,14 +106,21 @@ class floorEditor {
         layer.on('mouseout', e => { _call(e)})
       }
 
-      if (this.mode === 'editor') { // включаем редактирование объекта
-        if (layer.feature.properties.is_mutable) { // если это объект, который можно редактировать
-          if (!!layer.feature.geometry.coordinates) { // и у него есть координаты
-            layer.enableEdit()
-            // layer.setStyle({color: layer.feature.properties.color || 'blue'})
+      if (layer.feature.properties.is_mutable) { // если это объект, который можно редактировать
+        if (initHook === true) { // если инициализируем карту, то запоминаем состояние пропертис
+          this.viewStyle.isHideName = layer.feature.properties.is_hide_name
+          this.viewStyle.isHideArea = layer.feature.properties.is_hide_area
+          this.viewStyle.isOpaque = layer.feature.properties.is_opaque
+        }
+        if (this.mode === 'editor') { // если мод "редактирование"
+          if (!!layer.feature.geometry.coordinates) { // и у фичи есть координаты
+            layer.enableEdit() // активировать редактирование
           }
         }
       }
+
+      this.addTooltip(layer) // добавляем подписи на фичи
+      this.setStyle(layer) // добавляем цвета и прозрачности
     })
   }
 
@@ -131,13 +137,24 @@ class floorEditor {
       layer.unbindTooltip()
     }
     let tooltipText = ''
-    if (layer.feature.properties.is_hide_name && layer.feature.properties.is_hide_area) {
+    let _isHideName = false
+    let _isHideArea = false
+    
+    if (layer.feature.properties.is_mutable) {
+      _isHideName = this.viewStyle.isHideName
+      _isHideArea = this.viewStyle.isHideArea
+    } else {
+      _isHideName = layer.feature.properties.is_hide_name
+      _isHideArea = layer.feature.properties.is_hide_area
+    }
+
+    if (_isHideName && _isHideArea) {
       return
     }
-    if (!layer.feature.properties.is_hide_name) {
+    if (!_isHideName) {
       tooltipText += layer.feature.properties.name
     }
-    if (!layer.feature.properties.is_hide_area) {
+    if (!_isHideArea) {
       tooltipText !== '' ? tooltipText += ('<br>' + layer.feature.properties.area) : tooltipText += layer.feature.properties.area
       tooltipText += 'м<sup>2</sup>'
     }
@@ -301,12 +318,40 @@ class floorEditor {
     let _layerWithData = this.getEditableLayer()
 
     if (_layerWithData !== null) {
-      _layerWithData.feature.properties[propertyName] = !_layerWithData.feature.properties[propertyName]
-      this.addTooltip(_layerWithData)
-      this.historyCoordinates.splice(this.step + 1)
-      this.historyCoordinates.push(this.getResultGeoJSON())
-      this.step = this.historyCoordinates.length - 1
+      switch (propertyName) {
+        case 'is_hide_name':
+          this.viewStyle.isHideName = !this.viewStyle.isHideName
+          this.addTooltip(_layerWithData)
+          break
+
+        case 'is_hide_area':
+          this.viewStyle.isHideArea = !this.viewStyle.isHideArea
+          this.addTooltip(_layerWithData)
+          break
+
+        case 'is_opaque':
+          this.viewStyle.isOpaque = !this.viewStyle.isOpaque
+          this.setStyle(_layerWithData)
+          break
+        
+        default:
+          break
+      }
     }
+  }
+
+  setStyle (layer) {
+    let _isOpaque = false
+    let _color = (layer.feature.properties.color !== undefined) ? layer.feature.properties.color : 'blue'
+    if (layer.feature.properties.is_mutable) {
+      _isOpaque = this.viewStyle.isOpaque
+    } else {
+      _isOpaque = layer.feature.properties.is_opaque
+    }
+    layer.setStyle({
+      color: _color,
+      fillOpacity: (_isOpaque) ? 1 : 0.3
+    })
   }
 }
 

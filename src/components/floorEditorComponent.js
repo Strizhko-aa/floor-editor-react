@@ -80,7 +80,7 @@ class FloorEditor extends React.Component {
           <div className="divider"></div>
           <div className="toggle-property">
             <div className="input-wrapper">
-              <input className="property-input" hidden id="hide-bg" type="checkbox"/>
+              <input className="property-input" onClick={() => {this.toggleProperty('is_opaque')}} hidden id="hide-bg" type="checkbox"/>
               <label className="property-label" htmlFor="hide-bg">Непрозрачный фон</label>
             </div>
             <div className="input-wrapper">
