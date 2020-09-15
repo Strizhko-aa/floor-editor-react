@@ -2,13 +2,15 @@ import React from 'react';
 // import axios from 'axios';
 import FloorEditor from './floorEditorComponent';
 import testData from './testData.json'
+import testData2 from './testData2.json'
 
 class SomeComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null,
-      url: 'http://localhost:3000/floor',
+      data1: null,
+      data2: null,
+      // url: 'http://localhost:3000/floor',
       // url: 'http://rental.webworkers.pro/floor_plan/2',
       loading: true,
       savedData: null,
@@ -46,7 +48,8 @@ class SomeComponent extends React.Component {
     // })
 
     this.setState({
-      data: testData,
+      data1: testData,
+      data2: testData2,
       loading: false
     })
   }
@@ -65,7 +68,7 @@ class SomeComponent extends React.Component {
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <div style={{width: '50%', height: '720px'}}> 
           <FloorEditor
-            data={this.state.data}
+            data={this.state.data1}
             mode={'editor'}
             onSave={data => this.onSaveCallback(data)}
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
@@ -74,8 +77,8 @@ class SomeComponent extends React.Component {
         </div>
         <div style={{width: '49%', height: '720px'}}> 
           <FloorEditor
-            data={this.state.data}
-            mode={'viewer'}
+            data={this.state.data2}
+            mode={'editor'}
             onSave={data => this.onSaveCallback(data)}
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}

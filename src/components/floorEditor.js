@@ -183,12 +183,12 @@ class floorEditor {
             resolve([[0,0], [1000, 1000]])
           } else {
             let _max = Math.max(_width, _height)
-            if (_max > 1000) {
+            // if (_max > 1000) {
               let _koef = 1 / (_max / 1000)
               _width *= _koef
               _height *= _koef
               resolve([[0,0], [_height, _width]])
-            }
+            // }
           }
         }
         img.src = imageUrl

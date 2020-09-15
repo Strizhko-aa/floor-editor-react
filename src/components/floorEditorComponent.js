@@ -66,6 +66,7 @@ class FloorEditor extends React.Component {
 
   componentDidMount () {
     this.initMap()
+    console.log('componentDidMount', this.state.blockForMap)
   }
 
   render() {
