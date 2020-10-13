@@ -28,10 +28,10 @@ class SomeComponent extends React.Component {
 
   onFeatureHoverCallback (feature) {
     // do some with hovered feature
-    // console.log('feature from component', feature)
-    this.setState({
-      lastHoveredFeature: feature
-    })
+    console.log('feature from component', feature)
+    // this.setState({
+    //   lastHoveredFeature: feature
+    // })
   }
 
   onFeatureOutCallback (feature) {
@@ -69,7 +69,7 @@ class SomeComponent extends React.Component {
         <div style={{width: '50%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data1}
-            mode={'editor'}
+            mode={'viewer'}
             onSave={data => this.onSaveCallback(data)}
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
