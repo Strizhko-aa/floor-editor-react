@@ -29,6 +29,23 @@ class SomeComponent extends React.Component {
   onFeatureHoverCallback (feature) {
     // do some with hovered feature
     console.log('feature from component', feature)
+
+    let lastPoint = document.getElementById('exampleHoverPoint')
+    if (lastPoint !== null) {
+      lastPoint.remove()
+    }
+
+    let testDiv = document.createElement('div') // просто желтая точка с координатами из блока
+    testDiv.style.width = '12px'
+    testDiv.style.height = '12px'
+    testDiv.style.position = 'absolute'
+    testDiv.style.zIndex = 999999999
+    testDiv.style.backgroundColor = 'yellow'
+    testDiv.style.top = feature.bboxTopCenter.y - 6 + 'px'
+    testDiv.style.left = feature.bboxTopCenter.x - 6 + 'px' // bboxTopCenter - новое свойство. Это верх и центр bbox-a фичи на которуб навели в координатах контейнера
+    testDiv.id = 'exampleHoverPoint'
+    document.getElementById('exampleId').appendChild(testDiv)
+
     // this.setState({
     //   lastHoveredFeature: feature
     // })
@@ -75,7 +92,7 @@ class SomeComponent extends React.Component {
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>
-        <div style={{width: '49%', height: '720px'}}> 
+        <div style={{width: '49%', height: '720px', position: 'relative'}} id="exampleId"> 
           <FloorEditor
             data={this.state.data2}
             mode={'editor'}
