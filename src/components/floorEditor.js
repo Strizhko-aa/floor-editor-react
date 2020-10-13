@@ -1,5 +1,6 @@
 import L from 'leaflet'
 import 'leaflet-editable'
+import 'leaflet.path.drag'
 
 class floorEditor {
   constructor (params) {
@@ -52,7 +53,6 @@ class floorEditor {
     this.initBaseData(floorMap, data, true)
     // this.initEvents(floorMap)
     
-
     return floorMap
   }
 
@@ -79,9 +79,15 @@ class floorEditor {
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
     })
+
+    floorMap.on('editable:dragend', e => {
+      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.push(this.getResultGeoJSON())
+      this.step = this.historyCoordinates.length - 1
+    })
   
     floorMap.on('editable:vertex:deleted', e => {
-      this.historyCoordinates.splice(this.step + 1)
+      this.historyCoordinates.splice(this.step + 1)  // почистить действия
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
     })
@@ -122,6 +128,7 @@ class floorEditor {
         if (this.mode === 'editor') { // если мод "редактирование"
           if (!!layer.feature.geometry.coordinates) { // и у фичи есть координаты
             layer.enableEdit() // активировать редактирование
+            layer.dragging.enable()
           }
         }
       }
@@ -129,6 +136,7 @@ class floorEditor {
       this.addTooltip(layer) // добавляем подписи на фичи
       this.setStyle(layer) // добавляем цвета и прозрачности
     })
+    return baseDataLayer
   }
 
   clearOldLayers (floorMap) {
