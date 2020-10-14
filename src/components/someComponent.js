@@ -26,7 +26,7 @@ class SomeComponent extends React.Component {
     console.log('this.state.savedData', data)
   }
 
-  onFeatureHoverCallback (feature) {
+  onFeatureHoverCallback (feature, blockId) {
     // do some with hovered feature
     console.log('feature from component', feature)
 
@@ -44,7 +44,7 @@ class SomeComponent extends React.Component {
     testDiv.style.top = feature.bboxTopCenter.y - 6 + 'px'
     testDiv.style.left = feature.bboxTopCenter.x - 6 + 'px' // bboxTopCenter - новое свойство. Это верх и центр bbox-a фичи на которуб навели в координатах контейнера
     testDiv.id = 'exampleHoverPoint'
-    document.getElementById('exampleId').appendChild(testDiv)
+    document.getElementById(blockId).appendChild(testDiv)
 
     // this.setState({
     //   lastHoveredFeature: feature
@@ -83,21 +83,21 @@ class SomeComponent extends React.Component {
     } else {
       mapComponent = 
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <div style={{width: '50%', height: '720px'}}> 
+        <div style={{width: '50%', height: '720px', position: 'relative'}} id="exampleId1"> 
           <FloorEditor
             data={this.state.data1}
             mode={'viewer'}
             onSave={data => this.onSaveCallback(data)}
-            onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+            onFeatureHover={data => {this.onFeatureHoverCallback(data, 'exampleId1')}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>
-        <div style={{width: '49%', height: '720px', position: 'relative'}} id="exampleId"> 
+        <div style={{width: '49%', height: '720px', position: 'relative'}} id="exampleId2"> 
           <FloorEditor
             data={this.state.data2}
             mode={'editor'}
             onSave={data => this.onSaveCallback(data)}
-            onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+            onFeatureHover={data => {this.onFeatureHoverCallback(data, 'exampleId2')}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>

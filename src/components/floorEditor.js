@@ -16,6 +16,7 @@ class floorEditor {
     this.saveCallback = params.saveCallback
     this.historyCoordinates = []
     this.step = 0
+    this.blockId = params.blockId
     this.setCheckboxFunc = params.setCheckboxFunc
     this.viewStyle = {
       isHideName: false,
@@ -408,7 +409,7 @@ class floorEditor {
     })
   }
 
-  getBluePointCoords (feature) {
+  getBluePointCoords (feature, blockId) {
     if (feature !== undefined && 'geometry' in feature && feature.geometry !== null && 'coordinates' in feature.geometry && feature.geometry.coordinates !== null) {
       let bbox = [null, null, null, null] // xMin yMin xMax yMax
       feature.geometry.coordinates[0].forEach(item => {
@@ -438,16 +439,19 @@ class floorEditor {
           return
         }
       })
-      console.log('bbox', bbox)
       
       let point = {
         x: (bbox[0] + bbox[2]) / 2,
         y: bbox[3]
       }
-      console.log('point', point)
       let convertPoint = this.floorMap.latLngToContainerPoint([point.y, point.x])
       if (this.mode === 'editor') {
-        convertPoint.y += 55 // если еще есть и плашка с инструментами
+        let control = document.getElementById('control_' + this.blockId)
+        let contolHeight = 55
+        if (control !== null) {
+          contolHeight = parseInt(control.offsetHeight)
+        }
+        convertPoint.y += contolHeight // если еще есть и плашка с инструментами
       }
       return convertPoint
     } else {
