@@ -44,9 +44,10 @@ class floorEditor {
     if (this.mode === 'editor') {
       // this.addEditControls(floorMap)
       this.initEvents(floorMap)
-    } else {
-      document.getElementById('control_' + blockId).style.display = 'none'
-    }
+    } 
+    // else {
+    //   document.getElementById('control_' + blockId).style.display = 'none'
+    // }
 
     this.historyCoordinates.push(data)
     this.step = this.historyCoordinates.length - 1
@@ -75,6 +76,7 @@ class floorEditor {
     })
 
     floorMap.on('editable:vertex:dragend', e => {
+      console.log('editable:vertex:dragend')
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
@@ -82,6 +84,7 @@ class floorEditor {
     })
 
     floorMap.on('editable:dragend', e => {
+      console.log('editable:dragend')
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
@@ -413,36 +416,27 @@ class floorEditor {
     })
   }
 
-  getBluePointCoords (feature, blockId) {
+  getBluePointCoords (feature) {
     if (feature !== undefined && 'geometry' in feature && feature.geometry !== null && 'coordinates' in feature.geometry && feature.geometry.coordinates !== null) {
-      let bbox = [null, null, null, null] // xMin yMin xMax yMax
+      let bbox = [9999999, 9999999, -9999999, -9999999] // xMin yMin xMax yMax
       feature.geometry.coordinates[0].forEach(item => {
-        if (bbox[0] === null) {// первый проход
-          bbox[0] = item[0]
-          bbox[1] = item[1]
-          bbox[2] = item[0]
-          bbox[3] = item[1]
-          return
-        }
         let featureX = item[0]
         let featureY = item[1]
         if (featureX < bbox[0]) {
           bbox[0] = featureX
-          return
         }
         if (featureX > bbox[2]) {
           bbox[2] = featureX
-          return
         }
         if (featureY < bbox[1]) {
           bbox[1] = featureY
-          return
         }
         if (featureY > bbox[3]) {
           bbox[3] = featureY
-          return
         }
       })
+
+      console.log(bbox)
       
       let point = {
         x: (bbox[0] + bbox[2]) / 2,
