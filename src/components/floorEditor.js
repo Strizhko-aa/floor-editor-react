@@ -76,7 +76,6 @@ class floorEditor {
     })
 
     floorMap.on('editable:vertex:dragend', e => {
-      console.log('editable:vertex:dragend')
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
@@ -84,7 +83,6 @@ class floorEditor {
     })
 
     floorMap.on('editable:dragend', e => {
-      console.log('editable:dragend')
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
@@ -435,8 +433,6 @@ class floorEditor {
           bbox[3] = featureY
         }
       })
-
-      console.log(bbox)
       
       let point = {
         x: (bbox[0] + bbox[2]) / 2,
