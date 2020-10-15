@@ -64,9 +64,18 @@ class FloorEditor extends React.Component {
     this.state.fe.drawNewPolygon()
   }
 
+  componentDidUpdate (prevProps) {
+    if ((this.props.data !== prevProps.data) || 
+        (this.props.mode !== prevProps.mode)) {
+      this.state.fe.destr()
+      this.initMap()
+    }
+  }
+
   componentDidMount () {
+    console.log(this.props)
     this.initMap()
-    console.log('componentDidMount', this.state.blockForMap)
+    // console.log('componentDidMount', this.state.blockForMap)
   }
 
   render() {

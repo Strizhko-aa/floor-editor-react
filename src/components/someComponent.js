@@ -28,7 +28,18 @@ class SomeComponent extends React.Component {
 
   onFeatureHoverCallback (feature) {
     // do some with hovered feature
-    // console.log('feature from component', feature)
+    
+    /* let featureTopCentrePoint = feature.sourceTarget._pxBounds
+    let minx = featureTopCentrePoint.min.x
+    let maxx = featureTopCentrePoint.max.x
+    let maxy = featureTopCentrePoint.max.y */
+    
+    // let centerx = (minx + maxx) / 2
+    /* console.log('centerx', centerx)
+    console.log('minx', minx, 'maxx', maxx)
+    console.log('maxy', maxy) */
+    // feature.featureTopCentrePoints = [centerx, maxy]
+    console.log('feature from component', feature)
     this.setState({
       lastHoveredFeature: feature
     })
@@ -58,6 +69,12 @@ class SomeComponent extends React.Component {
     this.getData()
   }
 
+  qwe () {
+    this.setState({
+      data1: testData2
+    })
+  }
+
   render() {
     let loading = this.state.loading
     let mapComponent = null
@@ -66,6 +83,8 @@ class SomeComponent extends React.Component {
     } else {
       mapComponent = 
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        
+        <button onClick={() => {this.qwe()}}>поменять данные</button> 
         <div style={{width: '50%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data1}
@@ -74,7 +93,7 @@ class SomeComponent extends React.Component {
             onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
-        </div>
+        </div>6
         <div style={{width: '49%', height: '720px'}}> 
           <FloorEditor
             data={this.state.data2}

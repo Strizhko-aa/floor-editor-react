@@ -358,6 +358,10 @@ class floorEditor {
     this.initBaseData(this.floorMap, data)
   }
 
+  destr () {
+    this.floorMap.remove()
+  }
+
   toggleProperty (propertyName) {
     let _layerWithData = this.getEditableLayer()
 
