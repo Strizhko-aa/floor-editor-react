@@ -16,6 +16,7 @@ class floorEditor {
     this.saveCallback = params.saveCallback
     this.historyCoordinates = []
     this.step = 0
+    this.blockId = params.blockId
     this.setCheckboxFunc = params.setCheckboxFunc
     this.viewStyle = {
       isHideName: false,
@@ -28,7 +29,7 @@ class floorEditor {
     })
   }
 
-  async initMap(blockId, data) { 
+  async initMap(blockId, data) {
     let floorMap = L.map(blockId, {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
       editable: this.mode === 'editor',
@@ -50,8 +51,7 @@ class floorEditor {
     this.historyCoordinates.push(data)
     this.step = this.historyCoordinates.length - 1
 
-    this.initBaseData(floorMap, data, true)
-    // this.initEvents(floorMap)
+    this.initBaseData(floorMap, true)
     
     return floorMap
   }
@@ -71,25 +71,28 @@ class floorEditor {
       let newData = this.getResultGeoJSON()
       this.historyCoordinates.push(newData)
       this.step = this.historyCoordinates.length - 1
-      this.initBaseData(floorMap, newData, true)
+      this.initBaseData(floorMap, true)
     })
 
     floorMap.on('editable:vertex:dragend', e => {
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
+      this.initBaseData(floorMap)
     })
 
     floorMap.on('editable:dragend', e => {
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
+      this.initBaseData(floorMap)
     })
   
     floorMap.on('editable:vertex:deleted', e => {
       this.historyCoordinates.splice(this.step + 1)  // почистить действия
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
+      this.initBaseData(floorMap)
     })
 
     floorMap.on('editable:editing', e => {
@@ -100,16 +103,20 @@ class floorEditor {
     })
   }
 
-  initBaseData (floorMap, data, initHook) {
+  initBaseData (floorMap, initHook) {
     this.clearOldLayers(floorMap)
-    let baseDataLayer = L.geoJSON(data.plan_rooms.coordinates)
+    let baseDataLayer = L.geoJSON(this.historyCoordinates[this.step].plan_rooms.coordinates)
     baseDataLayer.id = 'baseData' // добавляем ид к изначальным данным чтобы потом их можно было найти
     baseDataLayer.addTo(floorMap)
     baseDataLayer.eachLayer(layer => {
 
       if (this.featureHoverCallback !== undefined) {
         let _call = this.featureHoverCallback
-        layer.on('mouseover', e => { _call(e)})
+        layer.on('mouseover', e => { 
+          let bluePoint = this.getBluePointCoords(e.target.feature)
+          e.bboxTopCenter = bluePoint
+          _call(e)
+        })
       }
       if (this.featureOutCallback !== undefined) {
         let _call = this.featureOutCallback
@@ -284,7 +291,7 @@ class floorEditor {
     if (this.step !== 0) {
       this.step--
       let newData = this.historyCoordinates[this.step]
-      this.initBaseData(this.floorMap, newData)
+      this.initBaseData(this.floorMap)
       this.lastUsedData = newData
     }
   }
@@ -293,7 +300,7 @@ class floorEditor {
     if (this.step < (this.historyCoordinates.length - 1)) {
       this.step++
       let newData = this.historyCoordinates[this.step]
-      this.initBaseData(this.floorMap, newData)
+      this.initBaseData(this.floorMap)
       this.lastUsedData = newData
     }
   }
@@ -353,9 +360,10 @@ class floorEditor {
     }
     data.plan_rooms.coordinates.features[i].geometry = null
     this.lastUsedData = data
+    this.historyCoordinates.splice(this.step + 1)
     this.historyCoordinates.push(data)
     this.step = this.historyCoordinates.length - 1
-    this.initBaseData(this.floorMap, data)
+    this.initBaseData(this.floorMap)
   }
 
   destr () {
@@ -403,6 +411,59 @@ class floorEditor {
       color: _color,
       fillOpacity: (_isOpaque) ? 1 : 0.3
     })
+  }
+
+  getBluePointCoords (feature, blockId) {
+    if (feature !== undefined && 'geometry' in feature && feature.geometry !== null && 'coordinates' in feature.geometry && feature.geometry.coordinates !== null) {
+      let bbox = [null, null, null, null] // xMin yMin xMax yMax
+      feature.geometry.coordinates[0].forEach(item => {
+        if (bbox[0] === null) {// первый проход
+          bbox[0] = item[0]
+          bbox[1] = item[1]
+          bbox[2] = item[0]
+          bbox[3] = item[1]
+          return
+        }
+        let featureX = item[0]
+        let featureY = item[1]
+        if (featureX < bbox[0]) {
+          bbox[0] = featureX
+          return
+        }
+        if (featureX > bbox[2]) {
+          bbox[2] = featureX
+          return
+        }
+        if (featureY < bbox[1]) {
+          bbox[1] = featureY
+          return
+        }
+        if (featureY > bbox[3]) {
+          bbox[3] = featureY
+          return
+        }
+      })
+      
+      let point = {
+        x: (bbox[0] + bbox[2]) / 2,
+        y: bbox[3]
+      }
+      let convertPoint = this.floorMap.latLngToContainerPoint([point.y, point.x])
+      if (this.mode === 'editor') {
+        let control = document.getElementById('control_' + this.blockId)
+        let contolHeight = 55
+        if (control !== null) {
+          contolHeight = parseInt(control.offsetHeight)
+        }
+        convertPoint.y += contolHeight // если еще есть и плашка с инструментами
+      }
+      return convertPoint
+    } else {
+      return {
+        x: null,
+        y: null
+      }
+    }
   }
 }
 

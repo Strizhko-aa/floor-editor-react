@@ -26,23 +26,29 @@ class SomeComponent extends React.Component {
     console.log('this.state.savedData', data)
   }
 
-  onFeatureHoverCallback (feature) {
+  onFeatureHoverCallback (feature, blockId) {
     // do some with hovered feature
-    
-    /* let featureTopCentrePoint = feature.sourceTarget._pxBounds
-    let minx = featureTopCentrePoint.min.x
-    let maxx = featureTopCentrePoint.max.x
-    let maxy = featureTopCentrePoint.max.y */
-    
-    // let centerx = (minx + maxx) / 2
-    /* console.log('centerx', centerx)
-    console.log('minx', minx, 'maxx', maxx)
-    console.log('maxy', maxy) */
-    // feature.featureTopCentrePoints = [centerx, maxy]
     console.log('feature from component', feature)
-    this.setState({
-      lastHoveredFeature: feature
-    })
+
+    let lastPoint = document.getElementById('exampleHoverPoint')
+    if (lastPoint !== null) {
+      lastPoint.remove()
+    }
+
+    let testDiv = document.createElement('div') // просто желтая точка с координатами из блока
+    testDiv.style.width = '12px'
+    testDiv.style.height = '12px'
+    testDiv.style.position = 'absolute'
+    testDiv.style.zIndex = 999999999
+    testDiv.style.backgroundColor = 'yellow'
+    testDiv.style.top = feature.bboxTopCenter.y - 6 + 'px'
+    testDiv.style.left = feature.bboxTopCenter.x - 6 + 'px' // bboxTopCenter - новое свойство. Это верх и центр bbox-a фичи на которуб навели в координатах контейнера
+    testDiv.id = 'exampleHoverPoint'
+    document.getElementById(blockId).appendChild(testDiv)
+
+    // this.setState({
+    //   lastHoveredFeature: feature
+    // })
   }
 
   onFeatureOutCallback (feature) {
@@ -83,23 +89,22 @@ class SomeComponent extends React.Component {
     } else {
       mapComponent = 
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        
-        <button onClick={() => {this.qwe()}}>поменять данные</button> 
-        <div style={{width: '50%', height: '720px'}}> 
+        <button onClick={() => {this.qwe()}}>поменять данные</button>
+        <div style={{width: '50%', height: '720px', position: 'relative'}} id="exampleId1"> 
           <FloorEditor
             data={this.state.data1}
-            mode={'editor'}
+            mode={'viewer'}
             onSave={data => this.onSaveCallback(data)}
-            onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+            onFeatureHover={data => {this.onFeatureHoverCallback(data, 'exampleId1')}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
-        </div>6
-        <div style={{width: '49%', height: '720px'}}> 
+        </div>
+        <div style={{width: '49%', height: '720px', position: 'relative'}} id="exampleId2"> 
           <FloorEditor
             data={this.state.data2}
             mode={'editor'}
             onSave={data => this.onSaveCallback(data)}
-            onFeatureHover={data => {this.onFeatureHoverCallback(data)}}
+            onFeatureHover={data => {this.onFeatureHoverCallback(data, 'exampleId2')}}
             onFeatureOut={data => {this.onFeatureOutCallback(data)}}
           />
         </div>
