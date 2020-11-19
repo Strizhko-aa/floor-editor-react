@@ -132,3 +132,24 @@
 .property-input:checked + .property-label:before {
    border: 1px solid #007bff;
 }
+
+.leaflet-tooltip {
+   background-color: transparent!important;
+   border: none!important;
+   box-shadow: none!important;
+   /* -webkit-text-stroke: 1px #ffffff;
+   color: black; */
+   text-shadow: #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0, 
+                 #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0;
+   font-weight: bold;
+}
+
+.city-label {
+   background: white;
+   border: 1px solid #888;
+
+   position: relative;
+
+   display: inline-block;
+   white-space: nowrap;
+}

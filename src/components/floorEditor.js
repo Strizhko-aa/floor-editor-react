@@ -26,6 +26,17 @@ class floorEditor {
 
     this.initMap(params.blockId, params.data).then(succ => {
       this.floorMap = succ
+
+      this.__myTooltipLayer = L.circle({lat: -10000, lng: -10000}, {radius: 10, id: 'my-tooltip-layer'}) // слой для проверки ширины тултипов
+      this.__myTooltipLayer.id = 'my-tooltip-layer'
+      this.__myTooltipLayer.bindTooltip('ddd', {
+        permanent: true,
+        direction: 'center'
+      })
+      this.floorMap.addLayer(this.__myTooltipLayer)
+      this.floorMap.on('zoomend', e => { this.redrawMap(this.floorMap) })
+
+      this.redrawMap(this.floorMap, true)
     })
   }
 
@@ -33,7 +44,10 @@ class floorEditor {
     let floorMap = L.map(blockId, {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
       editable: this.mode === 'editor',
-      minZoom: -1
+      minZoom: -1,
+      zoomSnap: 0.25
+      // zoomDelta: 0.7,
+      // wheelPxPerZoomLevel: 80
     })
 
     let imageUrl = data.plan_rooms.content.plan_file // устанавливаем изображение чтобы оно не исказилось и помещалось в координаты 1000 х 1000
@@ -51,8 +65,6 @@ class floorEditor {
 
     this.historyCoordinates.push(data)
     this.step = this.historyCoordinates.length - 1
-
-    this.initBaseData(floorMap, true)
     
     return floorMap
   }
@@ -72,28 +84,28 @@ class floorEditor {
       let newData = this.getResultGeoJSON()
       this.historyCoordinates.push(newData)
       this.step = this.historyCoordinates.length - 1
-      this.initBaseData(floorMap, true)
+      this.redrawMap(floorMap, true)
     })
 
     floorMap.on('editable:vertex:dragend', e => {
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
-      this.initBaseData(floorMap)
+      this.redrawMap(floorMap)
     })
 
     floorMap.on('editable:dragend', e => {
       this.historyCoordinates.splice(this.step + 1)
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
-      this.initBaseData(floorMap)
+      this.redrawMap(floorMap)
     })
   
     floorMap.on('editable:vertex:deleted', e => {
       this.historyCoordinates.splice(this.step + 1)  // почистить действия
       this.historyCoordinates.push(this.getResultGeoJSON())
       this.step = this.historyCoordinates.length - 1
-      this.initBaseData(floorMap)
+      this.redrawMap(floorMap)
     })
 
     floorMap.on('editable:editing', e => {
@@ -104,11 +116,12 @@ class floorEditor {
     })
   }
 
-  initBaseData (floorMap, initHook) {
+  redrawMap (floorMap, initHook) {
     this.clearOldLayers(floorMap)
     let baseDataLayer = L.geoJSON(this.historyCoordinates[this.step].plan_rooms.coordinates)
     baseDataLayer.id = 'baseData' // добавляем ид к изначальным данным чтобы потом их можно было найти
     baseDataLayer.addTo(floorMap)
+
     baseDataLayer.eachLayer(layer => {
 
       if (this.featureHoverCallback !== undefined) {
@@ -156,9 +169,11 @@ class floorEditor {
   }
 
   addTooltip (layer) {
-    if (layer.getTooltip()) {
+    if (layer.getTooltip()) { // если есть тултип, то убрать
       layer.unbindTooltip()
     }
+
+    // создание текста для тултипа
     let tooltipText = ''
     let _isHideName = false
     let _isHideArea = false
@@ -181,11 +196,43 @@ class floorEditor {
       tooltipText !== '' ? tooltipText += ('<br>' + layer.feature.properties.area) : tooltipText += layer.feature.properties.area
       tooltipText += 'м<sup>2</sup>'
     }
+
+    // вычисление ширины полигона
+    let bbox = this.getFeatureBbox(layer.feature)
+    let leftPoint = {
+      lat: bbox[1],
+      lng: bbox[0]
+    }
+    let rightPoint = {
+      lat: bbox[3],
+      lng: bbox[2]
+    }
+    leftPoint = this.floorMap.latLngToContainerPoint(leftPoint)
+    rightPoint = this.floorMap.latLngToContainerPoint(rightPoint)
+    let featureWidthPx = rightPoint.x - leftPoint.x
+
+    // вычисление ширины тултипа с самой длинной строкой
+    let strings = tooltipText.replace('</sup>', '').replace('</sup>', '')
+    strings = strings.split('<br>')
+    let maxLengthString = ''
+    strings.forEach(item => {
+      if (item.length > maxLengthString.length) {
+        maxLengthString = item
+      }
+    })
+
+    let testTooltip = this.__myTooltipLayer.getTooltip()
+    testTooltip._contentNode.innerText = maxLengthString
+    let tooltipWidth = testTooltip._container.clientWidth
+
+    if (Number(featureWidthPx) <= Number(tooltipWidth)) { // если тултип не помещается в полигон, не рисовать
+      return
+    }
+
     layer.bindTooltip(tooltipText, {
       permanent: true,
       direction: 'center'
     })
-
   }
 
   getBounds (imageUrl) { // приводим систему к координатам 1000mu х 1000mu (mu - map unit). Если изображение не квадратное, то большая сторона 1000 другая уменьшается в пропорции
@@ -292,7 +339,7 @@ class floorEditor {
     if (this.step !== 0) {
       this.step--
       let newData = this.historyCoordinates[this.step]
-      this.initBaseData(this.floorMap)
+      this.redrawMap(this.floorMap)
       this.lastUsedData = newData
     }
   }
@@ -301,7 +348,7 @@ class floorEditor {
     if (this.step < (this.historyCoordinates.length - 1)) {
       this.step++
       let newData = this.historyCoordinates[this.step]
-      this.initBaseData(this.floorMap)
+      this.redrawMap(this.floorMap)
       this.lastUsedData = newData
     }
   }
@@ -364,7 +411,7 @@ class floorEditor {
     this.historyCoordinates.splice(this.step + 1)
     this.historyCoordinates.push(data)
     this.step = this.historyCoordinates.length - 1
-    this.initBaseData(this.floorMap)
+    this.redrawMap(this.floorMap)
   }
 
   destr () {
@@ -416,23 +463,7 @@ class floorEditor {
 
   getBluePointCoords (feature) {
     if (feature !== undefined && 'geometry' in feature && feature.geometry !== null && 'coordinates' in feature.geometry && feature.geometry.coordinates !== null) {
-      let bbox = [9999999, 9999999, -9999999, -9999999] // xMin yMin xMax yMax
-      feature.geometry.coordinates[0].forEach(item => {
-        let featureX = item[0]
-        let featureY = item[1]
-        if (featureX < bbox[0]) {
-          bbox[0] = featureX
-        }
-        if (featureX > bbox[2]) {
-          bbox[2] = featureX
-        }
-        if (featureY < bbox[1]) {
-          bbox[1] = featureY
-        }
-        if (featureY > bbox[3]) {
-          bbox[3] = featureY
-        }
-      })
+      let bbox = this.getFeatureBbox(feature)
       
       let point = {
         x: (bbox[0] + bbox[2]) / 2,
@@ -454,6 +485,27 @@ class floorEditor {
         y: null
       }
     }
+  }
+
+  getFeatureBbox (feature) {
+    let bbox = [9999999, 9999999, -9999999, -9999999] // xMin yMin xMax yMax
+    feature.geometry.coordinates[0].forEach(item => {
+      let featureX = item[0]
+      let featureY = item[1]
+      if (featureX < bbox[0]) {
+        bbox[0] = featureX
+      }
+      if (featureX > bbox[2]) {
+        bbox[2] = featureX
+      }
+      if (featureY < bbox[1]) {
+        bbox[1] = featureY
+      }
+      if (featureY > bbox[3]) {
+        bbox[3] = featureY
+      }
+    })
+    return bbox
   }
 }
 

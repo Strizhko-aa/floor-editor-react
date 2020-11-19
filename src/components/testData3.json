@@ -1,0 +1,5299 @@
+{
+    "plan_rooms": {
+      "id": 1,
+      "editor": {
+        "on_perpendiculars": false,
+        "on_stick_last_point": true
+      },
+      "content": {
+        "plan_file": "https://sun9-5.userapi.com/Bpxzbd9yEX7lQxVZwg8gyYF-Q_4AGY3k00xGuw/TXDo97urfb8.jpg",
+        "description": "Парковка"
+      },
+      "coordinates": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    121.25,
+                    48.875
+                  ],
+                  [
+                    152.375,
+                    48.75
+                  ],
+                  [
+                    152.5,
+                    2.625
+                  ],
+                  [
+                    121.125,
+                    2.375
+                  ],
+                  [
+                    121.25,
+                    48.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 435,
+              "name": "Паркоместо 132",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    153.625,
+                    49
+                  ],
+                  [
+                    185.25,
+                    48.625
+                  ],
+                  [
+                    185.25,
+                    2.375
+                  ],
+                  [
+                    153.625,
+                    2.75
+                  ],
+                  [
+                    153.625,
+                    49
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 434,
+              "name": "Паркоместо 131",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    186.375,
+                    48.5
+                  ],
+                  [
+                    217.625,
+                    48.75
+                  ],
+                  [
+                    217.625,
+                    2.5
+                  ],
+                  [
+                    186.125,
+                    2.5
+                  ],
+                  [
+                    186.375,
+                    48.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 433,
+              "name": "Паркоместо 130",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    218.625,
+                    48.75
+                  ],
+                  [
+                    250.125,
+                    48.875
+                  ],
+                  [
+                    250.375,
+                    2.75
+                  ],
+                  [
+                    218.375,
+                    2.5
+                  ],
+                  [
+                    218.625,
+                    48.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 432,
+              "name": "Паркоместо 129",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    251.375,
+                    48.625
+                  ],
+                  [
+                    281.625,
+                    49
+                  ],
+                  [
+                    281.875,
+                    2.625
+                  ],
+                  [
+                    250.875,
+                    3
+                  ],
+                  [
+                    251.375,
+                    48.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 431,
+              "name": "Паркоместо 128",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    251.25,
+                    142.875
+                  ],
+                  [
+                    281.75,
+                    142.875
+                  ],
+                  [
+                    281.625,
+                    96.125
+                  ],
+                  [
+                    251.125,
+                    96.75
+                  ],
+                  [
+                    251.25,
+                    142.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 430,
+              "name": "Паркоместо 127",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    218.625,
+                    143.125
+                  ],
+                  [
+                    250.625,
+                    142.75
+                  ],
+                  [
+                    250.5,
+                    96.25
+                  ],
+                  [
+                    218.5,
+                    96.25
+                  ],
+                  [
+                    218.625,
+                    143.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 429,
+              "name": "Паркоместо 126",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    186,
+                    143
+                  ],
+                  [
+                    217.875,
+                    142.625
+                  ],
+                  [
+                    217.75,
+                    96.75
+                  ],
+                  [
+                    186,
+                    96.5
+                  ],
+                  [
+                    186,
+                    143
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 428,
+              "name": "Паркоместо 125",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    153.375,
+                    143.125
+                  ],
+                  [
+                    185.125,
+                    142.875
+                  ],
+                  [
+                    185.125,
+                    96.375
+                  ],
+                  [
+                    153.25,
+                    96.75
+                  ],
+                  [
+                    153.375,
+                    143.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 427,
+              "name": "Паркоместо 124",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    120.875,
+                    143
+                  ],
+                  [
+                    152.5,
+                    143
+                  ],
+                  [
+                    152.5,
+                    96.5
+                  ],
+                  [
+                    120.75,
+                    96.625
+                  ],
+                  [
+                    120.875,
+                    143
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 426,
+              "name": "Паркоместо 123",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.5,
+                    84.25
+                  ],
+                  [
+                    55,
+                    84
+                  ],
+                  [
+                    55.125,
+                    61.25
+                  ],
+                  [
+                    0.5,
+                    61.375
+                  ],
+                  [
+                    0.5,
+                    84.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 425,
+              "name": "Паркоместо 122",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.75,
+                    107.75
+                  ],
+                  [
+                    55.125,
+                    107.5
+                  ],
+                  [
+                    55.125,
+                    84.625
+                  ],
+                  [
+                    0.625,
+                    84.75
+                  ],
+                  [
+                    0.75,
+                    107.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 424,
+              "name": "Паркоместо 121",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.625,
+                    130.875
+                  ],
+                  [
+                    55,
+                    130.75
+                  ],
+                  [
+                    55,
+                    108.25
+                  ],
+                  [
+                    0.625,
+                    108.5
+                  ],
+                  [
+                    0.625,
+                    130.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 423,
+              "name": "Паркоместо 120",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.625,
+                    154.625
+                  ],
+                  [
+                    54.75,
+                    154.25
+                  ],
+                  [
+                    55,
+                    131.5
+                  ],
+                  [
+                    0.625,
+                    132
+                  ],
+                  [
+                    0.625,
+                    154.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 422,
+              "name": "Паркоместо 119",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.625,
+                    178.125
+                  ],
+                  [
+                    54.75,
+                    177.875
+                  ],
+                  [
+                    55.125,
+                    155
+                  ],
+                  [
+                    1,
+                    155.5
+                  ],
+                  [
+                    0.625,
+                    178.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 421,
+              "name": "Паркоместо 118",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.5,
+                    201.5
+                  ],
+                  [
+                    55.375,
+                    201.625
+                  ],
+                  [
+                    55,
+                    178.875
+                  ],
+                  [
+                    0.625,
+                    179
+                  ],
+                  [
+                    0.5,
+                    201.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 420,
+              "name": "Паркоместо 117",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.375,
+                    225.25
+                  ],
+                  [
+                    55.25,
+                    225.125
+                  ],
+                  [
+                    55.25,
+                    202.125
+                  ],
+                  [
+                    0.625,
+                    202.375
+                  ],
+                  [
+                    0.375,
+                    225.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 419,
+              "name": "Паркоместо 116",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.25,
+                    248.5
+                  ],
+                  [
+                    55.375,
+                    248.625
+                  ],
+                  [
+                    55.125,
+                    225.75
+                  ],
+                  [
+                    0.5,
+                    225.625
+                  ],
+                  [
+                    0.25,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 418,
+              "name": "Паркоместо 115",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.375,
+                    271.875
+                  ],
+                  [
+                    55.375,
+                    272
+                  ],
+                  [
+                    55.25,
+                    249.25
+                  ],
+                  [
+                    0.25,
+                    249
+                  ],
+                  [
+                    0.375,
+                    271.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 417,
+              "name": "Паркоместо 114",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    0.625,
+                    295.75
+                  ],
+                  [
+                    55.5,
+                    296
+                  ],
+                  [
+                    55.5,
+                    272.625
+                  ],
+                  [
+                    0.75,
+                    272.625
+                  ],
+                  [
+                    0.625,
+                    295.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 416,
+              "name": "Паркоместо 113",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    527.76518,
+                    359.156552
+                  ],
+                  [
+                    537.265179,
+                    350.406417
+                  ],
+                  [
+                    519.76518,
+                    331.15612
+                  ],
+                  [
+                    510.390181,
+                    339.031242
+                  ],
+                  [
+                    527.76518,
+                    359.156552
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 415,
+              "name": "Паркоместо 112",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    509.626296,
+                    358.753785
+                  ],
+                  [
+                    518.626295,
+                    350.253654
+                  ],
+                  [
+                    501.751297,
+                    330.503349
+                  ],
+                  [
+                    492.251297,
+                    339.253484
+                  ],
+                  [
+                    509.626296,
+                    358.753785
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 414,
+              "name": "Паркоместо 111",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    491.251297,
+                    358.50381
+                  ],
+                  [
+                    500.626296,
+                    350.253683
+                  ],
+                  [
+                    484.001297,
+                    331.003386
+                  ],
+                  [
+                    474.251298,
+                    339.628519
+                  ],
+                  [
+                    491.251297,
+                    358.50381
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 413,
+              "name": "Паркоместо 110",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    251.125,
+                    436.625
+                  ],
+                  [
+                    282.875,
+                    436.375
+                  ],
+                  [
+                    282.75,
+                    390
+                  ],
+                  [
+                    251.125,
+                    390.25
+                  ],
+                  [
+                    251.125,
+                    436.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 412,
+              "name": "Паркоместо 109",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    283.875,
+                    436.375
+                  ],
+                  [
+                    315.25,
+                    436.5
+                  ],
+                  [
+                    315.25,
+                    389.75
+                  ],
+                  [
+                    283.5,
+                    390
+                  ],
+                  [
+                    283.875,
+                    436.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 411,
+              "name": "Паркоместо 108",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    316.25,
+                    436.25
+                  ],
+                  [
+                    347.875,
+                    436.25
+                  ],
+                  [
+                    347.875,
+                    390.5
+                  ],
+                  [
+                    316.125,
+                    390.125
+                  ],
+                  [
+                    316.25,
+                    436.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 410,
+              "name": "Паркоместо 107",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    348.875,
+                    436.5
+                  ],
+                  [
+                    380.625,
+                    436.5
+                  ],
+                  [
+                    380.25,
+                    390
+                  ],
+                  [
+                    348.75,
+                    390.25
+                  ],
+                  [
+                    348.875,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 409,
+              "name": "Паркоместо 106",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    381.25,
+                    436.625
+                  ],
+                  [
+                    412.875,
+                    436.375
+                  ],
+                  [
+                    412.625,
+                    390
+                  ],
+                  [
+                    381.125,
+                    390.25
+                  ],
+                  [
+                    381.25,
+                    436.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 408,
+              "name": "Паркоместо 105",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    413.75,
+                    436.5
+                  ],
+                  [
+                    445.375,
+                    436.375
+                  ],
+                  [
+                    445.125,
+                    390.125
+                  ],
+                  [
+                    413.375,
+                    389.875
+                  ],
+                  [
+                    413.75,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 407,
+              "name": "Паркоместо 104",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    446.125,
+                    436.625
+                  ],
+                  [
+                    478,
+                    436.5
+                  ],
+                  [
+                    477.875,
+                    389.875
+                  ],
+                  [
+                    445.875,
+                    390.25
+                  ],
+                  [
+                    446.125,
+                    436.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 406,
+              "name": "Паркоместо 103",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    478.875,
+                    436.375
+                  ],
+                  [
+                    510.5,
+                    436
+                  ],
+                  [
+                    510.25,
+                    390
+                  ],
+                  [
+                    478.625,
+                    389.875
+                  ],
+                  [
+                    478.875,
+                    436.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 405,
+              "name": "Паркоместо 102",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    511.25,
+                    436.5
+                  ],
+                  [
+                    542.75,
+                    436.375
+                  ],
+                  [
+                    542.75,
+                    390.375
+                  ],
+                  [
+                    511,
+                    390.25
+                  ],
+                  [
+                    511.25,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 404,
+              "name": "Паркоместо 101",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    543.625,
+                    436.5
+                  ],
+                  [
+                    575.625,
+                    436.5
+                  ],
+                  [
+                    575.125,
+                    390.375
+                  ],
+                  [
+                    543.75,
+                    390.375
+                  ],
+                  [
+                    543.625,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 403,
+              "name": "Паркоместо 100",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    576.125,
+                    436.625
+                  ],
+                  [
+                    608.125,
+                    436.25
+                  ],
+                  [
+                    607.875,
+                    390.125
+                  ],
+                  [
+                    575.5,
+                    390.125
+                  ],
+                  [
+                    576.125,
+                    436.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 402,
+              "name": "Паркоместо 99",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    608.875,
+                    436.375
+                  ],
+                  [
+                    640.375,
+                    436.25
+                  ],
+                  [
+                    640.375,
+                    390.125
+                  ],
+                  [
+                    608.375,
+                    390.375
+                  ],
+                  [
+                    608.875,
+                    436.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 401,
+              "name": "Паркоместо 98",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    641.5,
+                    436.75
+                  ],
+                  [
+                    673,
+                    436.5
+                  ],
+                  [
+                    672.875,
+                    390.125
+                  ],
+                  [
+                    641.25,
+                    390.125
+                  ],
+                  [
+                    641.5,
+                    436.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 400,
+              "name": "Паркоместо 97",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    673.75,
+                    436.5
+                  ],
+                  [
+                    705.625,
+                    436.125
+                  ],
+                  [
+                    705.625,
+                    390
+                  ],
+                  [
+                    673.5,
+                    390
+                  ],
+                  [
+                    673.75,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 399,
+              "name": "Паркоместо 96",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    706.375,
+                    436.375
+                  ],
+                  [
+                    738,
+                    436.375
+                  ],
+                  [
+                    738,
+                    390
+                  ],
+                  [
+                    706.125,
+                    390.25
+                  ],
+                  [
+                    706.375,
+                    436.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 398,
+              "name": "Паркоместо 95",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    738.875,
+                    436.5
+                  ],
+                  [
+                    770.75,
+                    436.375
+                  ],
+                  [
+                    770.625,
+                    390.25
+                  ],
+                  [
+                    738.875,
+                    390.125
+                  ],
+                  [
+                    738.875,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 397,
+              "name": "Паркоместо 94",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    771.375,
+                    436.5
+                  ],
+                  [
+                    803.375,
+                    436.25
+                  ],
+                  [
+                    803.125,
+                    390
+                  ],
+                  [
+                    771.25,
+                    390.25
+                  ],
+                  [
+                    771.375,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 396,
+              "name": "Паркоместо 93",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    804,
+                    436.375
+                  ],
+                  [
+                    835.625,
+                    436.125
+                  ],
+                  [
+                    835.5,
+                    390.25
+                  ],
+                  [
+                    804,
+                    390.125
+                  ],
+                  [
+                    804,
+                    436.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 395,
+              "name": "Паркоместо 92",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    836.375,
+                    436.5
+                  ],
+                  [
+                    868.125,
+                    436.125
+                  ],
+                  [
+                    868,
+                    390.375
+                  ],
+                  [
+                    836.25,
+                    390.25
+                  ],
+                  [
+                    836.375,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 394,
+              "name": "Паркоместо 91",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    868.875,
+                    436.5
+                  ],
+                  [
+                    900.75,
+                    436.125
+                  ],
+                  [
+                    900.5,
+                    389.875
+                  ],
+                  [
+                    869,
+                    390
+                  ],
+                  [
+                    868.875,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 393,
+              "name": "Паркоместо 90",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    901.5,
+                    436.5
+                  ],
+                  [
+                    933.25,
+                    436.25
+                  ],
+                  [
+                    933.125,
+                    390
+                  ],
+                  [
+                    900.875,
+                    389.75
+                  ],
+                  [
+                    901.5,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 392,
+              "name": "Паркоместо 89",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    934.5,
+                    436.5
+                  ],
+                  [
+                    965.375,
+                    436.25
+                  ],
+                  [
+                    965.875,
+                    390.125
+                  ],
+                  [
+                    934,
+                    390.125
+                  ],
+                  [
+                    934.5,
+                    436.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 391,
+              "name": "Паркоместо 88",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    901.875,
+                    365.875
+                  ],
+                  [
+                    933.25,
+                    365.875
+                  ],
+                  [
+                    933.375,
+                    319.75
+                  ],
+                  [
+                    901.5,
+                    319.375
+                  ],
+                  [
+                    901.875,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 390,
+              "name": "Паркоместо 87",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    868.875,
+                    366
+                  ],
+                  [
+                    900.875,
+                    365.75
+                  ],
+                  [
+                    900.875,
+                    319.75
+                  ],
+                  [
+                    869,
+                    319.875
+                  ],
+                  [
+                    868.875,
+                    366
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 389,
+              "name": "Паркоместо 86",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    836.5,
+                    366
+                  ],
+                  [
+                    868.25,
+                    365.75
+                  ],
+                  [
+                    868.125,
+                    319.875
+                  ],
+                  [
+                    836.375,
+                    319.625
+                  ],
+                  [
+                    836.5,
+                    366
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 388,
+              "name": "Паркоместо 85",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    803.75,
+                    366
+                  ],
+                  [
+                    835.75,
+                    365.875
+                  ],
+                  [
+                    835.5,
+                    319.625
+                  ],
+                  [
+                    803.875,
+                    319.625
+                  ],
+                  [
+                    803.75,
+                    366
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 387,
+              "name": "Паркоместо 84",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    771.75,
+                    365.625
+                  ],
+                  [
+                    803,
+                    365.625
+                  ],
+                  [
+                    803,
+                    319.625
+                  ],
+                  [
+                    771.375,
+                    319.75
+                  ],
+                  [
+                    771.75,
+                    365.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 386,
+              "name": "Паркоместо 83",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    738.875,
+                    365.75
+                  ],
+                  [
+                    771,
+                    365.75
+                  ],
+                  [
+                    770.625,
+                    319.875
+                  ],
+                  [
+                    738.75,
+                    319.875
+                  ],
+                  [
+                    738.875,
+                    365.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 385,
+              "name": "Паркоместо 82",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    706.375,
+                    365.75
+                  ],
+                  [
+                    738,
+                    365.75
+                  ],
+                  [
+                    738.25,
+                    319.625
+                  ],
+                  [
+                    706.375,
+                    319.75
+                  ],
+                  [
+                    706.375,
+                    365.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 384,
+              "name": "Паркоместо 81",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    674,
+                    365.875
+                  ],
+                  [
+                    705.5,
+                    366
+                  ],
+                  [
+                    705.625,
+                    320.125
+                  ],
+                  [
+                    674.125,
+                    319.625
+                  ],
+                  [
+                    674,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 383,
+              "name": "Паркоместо 80",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    641.25,
+                    365.875
+                  ],
+                  [
+                    673.375,
+                    365.75
+                  ],
+                  [
+                    673.375,
+                    319.375
+                  ],
+                  [
+                    641.5,
+                    319.25
+                  ],
+                  [
+                    641.25,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 382,
+              "name": "Паркоместо 79",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    608.875,
+                    366
+                  ],
+                  [
+                    640.5,
+                    366
+                  ],
+                  [
+                    640.5,
+                    319.625
+                  ],
+                  [
+                    608.875,
+                    319.5
+                  ],
+                  [
+                    608.875,
+                    366
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 381,
+              "name": "Паркоместо 78",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    576.75,
+                    366.25
+                  ],
+                  [
+                    608.375,
+                    366
+                  ],
+                  [
+                    608.125,
+                    319.375
+                  ],
+                  [
+                    576.375,
+                    319.625
+                  ],
+                  [
+                    576.75,
+                    366.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 380,
+              "name": "Паркоместо 77",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    543.625,
+                    366.25
+                  ],
+                  [
+                    575.875,
+                    366.25
+                  ],
+                  [
+                    575.625,
+                    319.625
+                  ],
+                  [
+                    543.5,
+                    319.75
+                  ],
+                  [
+                    543.625,
+                    366.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 379,
+              "name": "Паркоместо 76",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    316.125,
+                    365.875
+                  ],
+                  [
+                    347.75,
+                    366.125
+                  ],
+                  [
+                    347.875,
+                    319.375
+                  ],
+                  [
+                    316.125,
+                    319.875
+                  ],
+                  [
+                    316.125,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 378,
+              "name": "Паркоместо 75",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    283.75,
+                    366.125
+                  ],
+                  [
+                    315.5,
+                    365.875
+                  ],
+                  [
+                    315.5,
+                    319.5
+                  ],
+                  [
+                    283.625,
+                    319.375
+                  ],
+                  [
+                    283.75,
+                    366.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 377,
+              "name": "Паркоместо 74",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    251.125,
+                    365.875
+                  ],
+                  [
+                    283,
+                    365.75
+                  ],
+                  [
+                    283,
+                    319.5
+                  ],
+                  [
+                    251,
+                    319.625
+                  ],
+                  [
+                    251.125,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 376,
+              "name": "Паркоместо 73",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    218.5,
+                    366.25
+                  ],
+                  [
+                    250.125,
+                    365.75
+                  ],
+                  [
+                    250.125,
+                    319.5
+                  ],
+                  [
+                    218.625,
+                    319.875
+                  ],
+                  [
+                    218.5,
+                    366.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 375,
+              "name": "Паркоместо 72",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    186.25,
+                    365.625
+                  ],
+                  [
+                    217.375,
+                    366
+                  ],
+                  [
+                    217.625,
+                    319.75
+                  ],
+                  [
+                    186.375,
+                    319.625
+                  ],
+                  [
+                    186.25,
+                    365.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 374,
+              "name": "Паркоместо 71",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    153.625,
+                    365.875
+                  ],
+                  [
+                    185,
+                    365.875
+                  ],
+                  [
+                    185.125,
+                    319.375
+                  ],
+                  [
+                    153.625,
+                    319.5
+                  ],
+                  [
+                    153.625,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 373,
+              "name": "Паркоместо 70",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    121,
+                    366
+                  ],
+                  [
+                    153.125,
+                    365.875
+                  ],
+                  [
+                    152.75,
+                    319.75
+                  ],
+                  [
+                    121,
+                    319.875
+                  ],
+                  [
+                    121,
+                    366
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 372,
+              "name": "Паркоместо 69",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    88.625,
+                    365.75
+                  ],
+                  [
+                    120.25,
+                    365.75
+                  ],
+                  [
+                    120.125,
+                    319.875
+                  ],
+                  [
+                    88.5,
+                    320
+                  ],
+                  [
+                    88.625,
+                    365.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 371,
+              "name": "Паркоместо 68",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    56.25,
+                    365.875
+                  ],
+                  [
+                    87.875,
+                    365.625
+                  ],
+                  [
+                    88,
+                    320
+                  ],
+                  [
+                    56.125,
+                    319.75
+                  ],
+                  [
+                    56.25,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 370,
+              "name": "Паркоместо 67",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    23.25,
+                    365.875
+                  ],
+                  [
+                    55.125,
+                    365.875
+                  ],
+                  [
+                    55.25,
+                    320
+                  ],
+                  [
+                    23.5,
+                    319.625
+                  ],
+                  [
+                    23.25,
+                    365.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 369,
+              "name": "Паркоместо 66",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    153.875,
+                    295.5
+                  ],
+                  [
+                    185.125,
+                    295.625
+                  ],
+                  [
+                    185.125,
+                    249.125
+                  ],
+                  [
+                    153.5,
+                    249.375
+                  ],
+                  [
+                    153.875,
+                    295.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 368,
+              "name": "Паркоместо 65",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    186.125,
+                    295.625
+                  ],
+                  [
+                    217.875,
+                    295.375
+                  ],
+                  [
+                    217.75,
+                    249
+                  ],
+                  [
+                    185.875,
+                    249
+                  ],
+                  [
+                    186.125,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 367,
+              "name": "Паркоместо 64",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    218.5,
+                    295.625
+                  ],
+                  [
+                    250,
+                    295.875
+                  ],
+                  [
+                    250,
+                    249.25
+                  ],
+                  [
+                    218.75,
+                    249.125
+                  ],
+                  [
+                    218.5,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 366,
+              "name": "Паркоместо 63",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    251.125,
+                    295.75
+                  ],
+                  [
+                    282.75,
+                    295.375
+                  ],
+                  [
+                    282.5,
+                    249.25
+                  ],
+                  [
+                    250.875,
+                    249.25
+                  ],
+                  [
+                    251.125,
+                    295.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 365,
+              "name": "Паркоместо 62",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    283.875,
+                    295.375
+                  ],
+                  [
+                    315.25,
+                    295.375
+                  ],
+                  [
+                    315.25,
+                    249.5
+                  ],
+                  [
+                    283.625,
+                    249.625
+                  ],
+                  [
+                    283.875,
+                    295.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 364,
+              "name": "Паркоместо 61",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    316.125,
+                    295.375
+                  ],
+                  [
+                    347.5,
+                    295.375
+                  ],
+                  [
+                    347.5,
+                    249
+                  ],
+                  [
+                    316.25,
+                    249.125
+                  ],
+                  [
+                    316.125,
+                    295.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 363,
+              "name": "Паркоместо 60",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    348.625,
+                    295.625
+                  ],
+                  [
+                    380.125,
+                    295.625
+                  ],
+                  [
+                    380.375,
+                    249.125
+                  ],
+                  [
+                    348.875,
+                    248.875
+                  ],
+                  [
+                    348.625,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 362,
+              "name": "Паркоместо 59",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    446.125,
+                    295.625
+                  ],
+                  [
+                    477.625,
+                    295.25
+                  ],
+                  [
+                    478,
+                    249.125
+                  ],
+                  [
+                    446.125,
+                    249.5
+                  ],
+                  [
+                    446.125,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 361,
+              "name": "Паркоместо 58",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    478.75,
+                    295.625
+                  ],
+                  [
+                    510.5,
+                    295.375
+                  ],
+                  [
+                    510.5,
+                    249
+                  ],
+                  [
+                    478.875,
+                    249.375
+                  ],
+                  [
+                    478.75,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 360,
+              "name": "Паркоместо 57",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    511.375,
+                    295.5
+                  ],
+                  [
+                    542.875,
+                    295.125
+                  ],
+                  [
+                    542.875,
+                    249.25
+                  ],
+                  [
+                    511.25,
+                    249.25
+                  ],
+                  [
+                    511.375,
+                    295.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 359,
+              "name": "Паркоместо 56",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    543.75,
+                    295.5
+                  ],
+                  [
+                    575.375,
+                    295.375
+                  ],
+                  [
+                    575.5,
+                    249
+                  ],
+                  [
+                    543.75,
+                    249.375
+                  ],
+                  [
+                    543.75,
+                    295.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 358,
+              "name": "Паркоместо 55",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    576.125,
+                    295.5
+                  ],
+                  [
+                    607.75,
+                    295.375
+                  ],
+                  [
+                    607.875,
+                    249.25
+                  ],
+                  [
+                    576.5,
+                    249.125
+                  ],
+                  [
+                    576.125,
+                    295.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 357,
+              "name": "Паркоместо 54",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    608.75,
+                    295.5
+                  ],
+                  [
+                    640.5,
+                    295.625
+                  ],
+                  [
+                    640.5,
+                    249
+                  ],
+                  [
+                    608.625,
+                    249
+                  ],
+                  [
+                    608.75,
+                    295.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 356,
+              "name": "Паркоместо 53",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    641.375,
+                    295.25
+                  ],
+                  [
+                    673,
+                    295.125
+                  ],
+                  [
+                    672.75,
+                    248.875
+                  ],
+                  [
+                    641.375,
+                    249
+                  ],
+                  [
+                    641.375,
+                    295.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 355,
+              "name": "Паркоместо 52",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    673.75,
+                    295.625
+                  ],
+                  [
+                    705.25,
+                    295.625
+                  ],
+                  [
+                    705.375,
+                    249.5
+                  ],
+                  [
+                    673.875,
+                    249.125
+                  ],
+                  [
+                    673.75,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 354,
+              "name": "Паркоместо 51",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    706,
+                    295.625
+                  ],
+                  [
+                    738,
+                    295.375
+                  ],
+                  [
+                    738.125,
+                    249.375
+                  ],
+                  [
+                    706.125,
+                    249.375
+                  ],
+                  [
+                    706,
+                    295.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 353,
+              "name": "Паркоместо 50",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    738.75,
+                    295.375
+                  ],
+                  [
+                    770.25,
+                    295.375
+                  ],
+                  [
+                    770.5,
+                    248.875
+                  ],
+                  [
+                    738.75,
+                    249
+                  ],
+                  [
+                    738.75,
+                    295.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 352,
+              "name": "Паркоместо 49",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    771.375,
+                    295.375
+                  ],
+                  [
+                    803.125,
+                    295.25
+                  ],
+                  [
+                    803,
+                    249.5
+                  ],
+                  [
+                    771.375,
+                    249.125
+                  ],
+                  [
+                    771.375,
+                    295.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 351,
+              "name": "Паркоместо 48",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    804,
+                    295.25
+                  ],
+                  [
+                    835.5,
+                    295.25
+                  ],
+                  [
+                    835.625,
+                    249.625
+                  ],
+                  [
+                    803.75,
+                    249.375
+                  ],
+                  [
+                    804,
+                    295.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 350,
+              "name": "Паркоместо 47",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    836.5,
+                    295.125
+                  ],
+                  [
+                    868.125,
+                    295
+                  ],
+                  [
+                    868,
+                    249.5
+                  ],
+                  [
+                    836.25,
+                    249.25
+                  ],
+                  [
+                    836.5,
+                    295.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 349,
+              "name": "Паркоместо 46",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    868.875,
+                    295.5
+                  ],
+                  [
+                    900.375,
+                    295.75
+                  ],
+                  [
+                    901,
+                    249.125
+                  ],
+                  [
+                    868.75,
+                    249.5
+                  ],
+                  [
+                    868.875,
+                    295.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 348,
+              "name": "Паркоместо 45",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    869.125,
+                    248.625
+                  ],
+                  [
+                    900.75,
+                    248.5
+                  ],
+                  [
+                    901,
+                    202.25
+                  ],
+                  [
+                    869.125,
+                    202.25
+                  ],
+                  [
+                    869.125,
+                    248.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 347,
+              "name": "Паркоместо 44",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    836.75,
+                    248.5
+                  ],
+                  [
+                    868.25,
+                    248.625
+                  ],
+                  [
+                    868.375,
+                    202
+                  ],
+                  [
+                    836.25,
+                    202.25
+                  ],
+                  [
+                    836.75,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 346,
+              "name": "Паркоместо 43",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    804.25,
+                    248.375
+                  ],
+                  [
+                    835.75,
+                    248.375
+                  ],
+                  [
+                    835.875,
+                    201.75
+                  ],
+                  [
+                    804.375,
+                    202
+                  ],
+                  [
+                    804.25,
+                    248.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 345,
+              "name": "Паркоместо 42",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    771.625,
+                    248.375
+                  ],
+                  [
+                    803.25,
+                    248.5
+                  ],
+                  [
+                    803,
+                    202.375
+                  ],
+                  [
+                    771.625,
+                    202.125
+                  ],
+                  [
+                    771.625,
+                    248.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 344,
+              "name": "Паркоместо 41",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    739.125,
+                    248.5
+                  ],
+                  [
+                    770.75,
+                    248.25
+                  ],
+                  [
+                    770.75,
+                    201.875
+                  ],
+                  [
+                    739.125,
+                    202.125
+                  ],
+                  [
+                    739.125,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 343,
+              "name": "Паркоместо 40",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    706,
+                    248.5
+                  ],
+                  [
+                    738.625,
+                    248.5
+                  ],
+                  [
+                    738.5,
+                    201.875
+                  ],
+                  [
+                    706.5,
+                    202.125
+                  ],
+                  [
+                    706,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 342,
+              "name": "Паркоместо 39",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    674.125,
+                    248.25
+                  ],
+                  [
+                    705.25,
+                    248.5
+                  ],
+                  [
+                    705.625,
+                    202.25
+                  ],
+                  [
+                    674,
+                    202.5
+                  ],
+                  [
+                    674.125,
+                    248.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 341,
+              "name": "Паркоместо 38",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    641.375,
+                    248.5
+                  ],
+                  [
+                    673,
+                    248.25
+                  ],
+                  [
+                    673,
+                    201.875
+                  ],
+                  [
+                    641.25,
+                    202.125
+                  ],
+                  [
+                    641.375,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 340,
+              "name": "Паркоместо 37",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    609,
+                    248.5
+                  ],
+                  [
+                    640.5,
+                    248.375
+                  ],
+                  [
+                    640.5,
+                    202.5
+                  ],
+                  [
+                    609,
+                    202.75
+                  ],
+                  [
+                    609,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 339,
+              "name": "Паркоместо 36",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    576.625,
+                    248.375
+                  ],
+                  [
+                    608,
+                    248.375
+                  ],
+                  [
+                    607.875,
+                    202
+                  ],
+                  [
+                    576.125,
+                    202.375
+                  ],
+                  [
+                    576.625,
+                    248.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 338,
+              "name": "Паркоместо 35",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    543.844658,
+                    248.692318
+                  ],
+                  [
+                    575.469658,
+                    248.442318
+                  ],
+                  [
+                    575.219658,
+                    202.567318
+                  ],
+                  [
+                    543.719658,
+                    202.192318
+                  ],
+                  [
+                    543.844658,
+                    248.692318
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 337,
+              "name": "Паркоместо 34",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    511.5,
+                    248.625
+                  ],
+                  [
+                    543.25,
+                    248.625
+                  ],
+                  [
+                    543.125,
+                    201.75
+                  ],
+                  [
+                    511.375,
+                    202.5
+                  ],
+                  [
+                    511.5,
+                    248.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 336,
+              "name": "Паркоместо 33",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    479.25,
+                    248.5
+                  ],
+                  [
+                    510.625,
+                    248.25
+                  ],
+                  [
+                    510.25,
+                    202.5
+                  ],
+                  [
+                    478.875,
+                    202.25
+                  ],
+                  [
+                    479.25,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 335,
+              "name": "Паркоместо 32",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    445.75,
+                    248.375
+                  ],
+                  [
+                    478,
+                    248.25
+                  ],
+                  [
+                    477.75,
+                    202.625
+                  ],
+                  [
+                    446.125,
+                    202.125
+                  ],
+                  [
+                    445.75,
+                    248.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 334,
+              "name": "Паркоместо 31",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    349,
+                    248.375
+                  ],
+                  [
+                    380.125,
+                    248.25
+                  ],
+                  [
+                    380.5,
+                    202.375
+                  ],
+                  [
+                    348.75,
+                    202.25
+                  ],
+                  [
+                    349,
+                    248.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 333,
+              "name": "Паркоместо 30",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    316.375,
+                    248.375
+                  ],
+                  [
+                    348,
+                    248.25
+                  ],
+                  [
+                    347.75,
+                    202.5
+                  ],
+                  [
+                    316.125,
+                    202.375
+                  ],
+                  [
+                    316.375,
+                    248.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 332,
+              "name": "Паркоместо 29",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    284,
+                    248.625
+                  ],
+                  [
+                    315.375,
+                    248.25
+                  ],
+                  [
+                    315.375,
+                    202.25
+                  ],
+                  [
+                    283.875,
+                    202.5
+                  ],
+                  [
+                    284,
+                    248.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 331,
+              "name": "Паркоместот 28",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    251.25,
+                    248.5
+                  ],
+                  [
+                    282.75,
+                    248.625
+                  ],
+                  [
+                    282.625,
+                    202.375
+                  ],
+                  [
+                    251.25,
+                    202.375
+                  ],
+                  [
+                    251.25,
+                    248.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 330,
+              "name": "Паркоместо 27",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    219,
+                    248.625
+                  ],
+                  [
+                    250.125,
+                    248.375
+                  ],
+                  [
+                    250.25,
+                    202.125
+                  ],
+                  [
+                    218.625,
+                    202.75
+                  ],
+                  [
+                    219,
+                    248.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 329,
+              "name": "Паркоместо 26",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    186.625,
+                    248.625
+                  ],
+                  [
+                    218,
+                    248.25
+                  ],
+                  [
+                    217.625,
+                    202.125
+                  ],
+                  [
+                    186,
+                    202.375
+                  ],
+                  [
+                    186.625,
+                    248.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 328,
+              "name": "Паркоместо 25",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    153.416321,
+                    248.580528
+                  ],
+                  [
+                    184.916321,
+                    248.580528
+                  ],
+                  [
+                    185.166321,
+                    202.455528
+                  ],
+                  [
+                    153.166321,
+                    202.080528
+                  ],
+                  [
+                    153.416321,
+                    248.580528
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 327,
+              "name": "Паркоместо 24",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    185.875,
+                    190.25
+                  ],
+                  [
+                    217.5,
+                    189.75
+                  ],
+                  [
+                    217.875,
+                    143.625
+                  ],
+                  [
+                    186,
+                    143.5
+                  ],
+                  [
+                    185.875,
+                    190.25
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 326,
+              "name": "Паркоместо 23",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    218.375,
+                    189.875
+                  ],
+                  [
+                    249.875,
+                    189.875
+                  ],
+                  [
+                    250.5,
+                    143.625
+                  ],
+                  [
+                    218.625,
+                    143.5
+                  ],
+                  [
+                    218.375,
+                    189.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 325,
+              "name": "Паркоместо 22",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    250.75,
+                    189.875
+                  ],
+                  [
+                    282.5,
+                    190.125
+                  ],
+                  [
+                    281.875,
+                    143.5
+                  ],
+                  [
+                    250.875,
+                    143.5
+                  ],
+                  [
+                    250.75,
+                    189.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 324,
+              "name": "Паркоместо 21",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    283.125,
+                    190.125
+                  ],
+                  [
+                    315.5,
+                    189.875
+                  ],
+                  [
+                    315.5,
+                    144.375
+                  ],
+                  [
+                    283.375,
+                    144.25
+                  ],
+                  [
+                    283.125,
+                    190.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 323,
+              "name": "Паркоместо 20",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    316.125,
+                    189.625
+                  ],
+                  [
+                    347.5,
+                    189.75
+                  ],
+                  [
+                    347.875,
+                    144.625
+                  ],
+                  [
+                    316.25,
+                    144.875
+                  ],
+                  [
+                    316.125,
+                    189.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 322,
+              "name": "Паркоместо 19",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    348.625,
+                    189.5
+                  ],
+                  [
+                    380.125,
+                    189.5
+                  ],
+                  [
+                    380.25,
+                    145
+                  ],
+                  [
+                    348.875,
+                    144.75
+                  ],
+                  [
+                    348.625,
+                    189.5
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 321,
+              "name": "Паркоместо 18",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    381.25,
+                    189.75
+                  ],
+                  [
+                    412.75,
+                    189.5
+                  ],
+                  [
+                    412.625,
+                    144.375
+                  ],
+                  [
+                    381.125,
+                    144.75
+                  ],
+                  [
+                    381.25,
+                    189.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 320,
+              "name": "Паркоместо 17",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    413.75,
+                    189.625
+                  ],
+                  [
+                    445,
+                    189.875
+                  ],
+                  [
+                    445.25,
+                    144.625
+                  ],
+                  [
+                    414,
+                    144.375
+                  ],
+                  [
+                    413.75,
+                    189.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 319,
+              "name": "Паркоместо 16",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    446.25,
+                    189.875
+                  ],
+                  [
+                    477.625,
+                    189.75
+                  ],
+                  [
+                    477.875,
+                    144.5
+                  ],
+                  [
+                    446.125,
+                    144.75
+                  ],
+                  [
+                    446.25,
+                    189.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 318,
+              "name": "Паркоместо 15",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    478.75,
+                    190.125
+                  ],
+                  [
+                    510.375,
+                    189.625
+                  ],
+                  [
+                    510.125,
+                    144.25
+                  ],
+                  [
+                    478.5,
+                    144.5
+                  ],
+                  [
+                    478.75,
+                    190.125
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 317,
+              "name": "Паркоместо 14",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    511.25,
+                    189.875
+                  ],
+                  [
+                    542.25,
+                    189.75
+                  ],
+                  [
+                    543,
+                    144.875
+                  ],
+                  [
+                    511.125,
+                    144.625
+                  ],
+                  [
+                    511.25,
+                    189.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 316,
+              "name": "Паркоместо 13",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    543.75,
+                    189.375
+                  ],
+                  [
+                    575.75,
+                    189.75
+                  ],
+                  [
+                    575.75,
+                    144.375
+                  ],
+                  [
+                    544.125,
+                    144.5
+                  ],
+                  [
+                    543.75,
+                    189.375
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 315,
+              "name": "Паркоместо 12",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    576.5,
+                    189.75
+                  ],
+                  [
+                    608,
+                    189.75
+                  ],
+                  [
+                    607.875,
+                    144.5
+                  ],
+                  [
+                    576.25,
+                    144.375
+                  ],
+                  [
+                    576.5,
+                    189.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 314,
+              "name": "Паркоместо 11",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    609,
+                    189.75
+                  ],
+                  [
+                    640.5,
+                    189.75
+                  ],
+                  [
+                    640,
+                    144.625
+                  ],
+                  [
+                    608.75,
+                    144.625
+                  ],
+                  [
+                    609,
+                    189.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 313,
+              "name": "Паркоместо 10",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    641.375,
+                    189.625
+                  ],
+                  [
+                    672.875,
+                    189.75
+                  ],
+                  [
+                    672.875,
+                    144.25
+                  ],
+                  [
+                    640.75,
+                    144.25
+                  ],
+                  [
+                    641.375,
+                    189.625
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 312,
+              "name": "Паркоместо 9",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    673.875,
+                    190
+                  ],
+                  [
+                    705.375,
+                    189.75
+                  ],
+                  [
+                    705.5,
+                    144.5
+                  ],
+                  [
+                    673.75,
+                    144.375
+                  ],
+                  [
+                    673.875,
+                    190
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 311,
+              "name": "Паркоместо 8",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    706.625,
+                    189.875
+                  ],
+                  [
+                    737.75,
+                    189.75
+                  ],
+                  [
+                    738.125,
+                    144.125
+                  ],
+                  [
+                    706.125,
+                    144.75
+                  ],
+                  [
+                    706.625,
+                    189.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 310,
+              "name": "Паркоместо 7",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    738.75,
+                    190
+                  ],
+                  [
+                    770.75,
+                    189.75
+                  ],
+                  [
+                    770.5,
+                    144.375
+                  ],
+                  [
+                    739.125,
+                    144.75
+                  ],
+                  [
+                    738.75,
+                    190
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 309,
+              "name": "Паркоместо 6",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    771.5,
+                    189.875
+                  ],
+                  [
+                    803,
+                    189.875
+                  ],
+                  [
+                    802.75,
+                    144.25
+                  ],
+                  [
+                    771.375,
+                    144.625
+                  ],
+                  [
+                    771.5,
+                    189.875
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 308,
+              "name": "Паркоместо 5",
+              "area": "0.00",
+              "color": "#58bf58",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    803.75,
+                    190
+                  ],
+                  [
+                    835,
+                    189.75
+                  ],
+                  [
+                    835,
+                    144.5
+                  ],
+                  [
+                    803.5,
+                    144
+                  ],
+                  [
+                    803.75,
+                    190
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 307,
+              "name": "Паркоместо 4",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    836.5,
+                    190
+                  ],
+                  [
+                    867.875,
+                    189.625
+                  ],
+                  [
+                    867.875,
+                    143.75
+                  ],
+                  [
+                    836.375,
+                    144.25
+                  ],
+                  [
+                    836.5,
+                    190
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 306,
+              "name": "Паркоместо 3",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    869.25,
+                    189.75
+                  ],
+                  [
+                    900,
+                    189.875
+                  ],
+                  [
+                    900.375,
+                    144.25
+                  ],
+                  [
+                    868.875,
+                    144.25
+                  ],
+                  [
+                    869.25,
+                    189.75
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 305,
+              "name": "Паркоместо 2",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    900.749451,
+                    190.058533
+                  ],
+                  [
+                    932.749451,
+                    191.058533
+                  ],
+                  [
+                    932.749451,
+                    145.558533
+                  ],
+                  [
+                    900.9646,
+                    144
+                  ],
+                  [
+                    900.749451,
+                    190.058533
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "id": 304,
+              "name": "Паркоместо 1",
+              "area": "0.00",
+              "color": "#ff6966",
+              "is_opaque": false,
+              "is_hide_name": false,
+              "is_hide_area": false,
+              "is_mutable": false
+            }
+          }
+        ]
+      }
+    }
+  }
+  

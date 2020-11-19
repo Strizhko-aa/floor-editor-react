@@ -3,6 +3,7 @@ import React from 'react';
 import FloorEditor from './floorEditorComponent';
 import testData from './testData.json'
 import testData2 from './testData2.json'
+import testData3 from './testData3.json'
 
 class SomeComponent extends React.Component {
   constructor(props) {
@@ -30,22 +31,23 @@ class SomeComponent extends React.Component {
     // do some with hovered feature
     console.log('feature from component', feature)
 
-    let lastPoint = document.getElementById('exampleHoverPoint')
-    if (lastPoint !== null) {
-      lastPoint.remove()
-    }
+    // создание блока при наведении
+    // let lastPoint = document.getElementById('exampleHoverPoint')
+    // if (lastPoint !== null) {
+    //   lastPoint.remove()
+    // }
+    // let testDiv = document.createElement('div') // просто желтая точка с координатами из блока
+    // testDiv.style.width = '12px'
+    // testDiv.style.height = '12px'
+    // testDiv.style.position = 'absolute'
+    // testDiv.style.zIndex = 999999999
+    // testDiv.style.backgroundColor = 'yellow'
+    // testDiv.style.top = feature.bboxTopCenter.y - 6 + 'px'
+    // testDiv.style.left = feature.bboxTopCenter.x - 6 + 'px' // bboxTopCenter - новое свойство. Это верх и центр bbox-a фичи на которуб навели в координатах контейнера
+    // testDiv.id = 'exampleHoverPoint'
+    // document.getElementById(blockId).appendChild(testDiv)
 
-    let testDiv = document.createElement('div') // просто желтая точка с координатами из блока
-    testDiv.style.width = '12px'
-    testDiv.style.height = '12px'
-    testDiv.style.position = 'absolute'
-    testDiv.style.zIndex = 999999999
-    testDiv.style.backgroundColor = 'yellow'
-    testDiv.style.top = feature.bboxTopCenter.y - 6 + 'px'
-    testDiv.style.left = feature.bboxTopCenter.x - 6 + 'px' // bboxTopCenter - новое свойство. Это верх и центр bbox-a фичи на которуб навели в координатах контейнера
-    testDiv.id = 'exampleHoverPoint'
-    document.getElementById(blockId).appendChild(testDiv)
-
+    // пример использования
     // this.setState({
     //   lastHoveredFeature: feature
     // })
@@ -66,7 +68,7 @@ class SomeComponent extends React.Component {
 
     this.setState({
       data1: testData,
-      data2: testData2,
+      data2: testData3,
       loading: false
     })
   }
