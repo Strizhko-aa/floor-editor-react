@@ -45,8 +45,8 @@ class floorEditor {
       crs: L.CRS.Simple, // обычная Декартова система координат. [0,0] - левый нижний угол
       editable: this.mode === 'editor',
       minZoom: -1,
-      zoomSnap: 0.25
-      // zoomDelta: 0.7,
+      zoomSnap: 0.01,
+      zoomDelta: 0.5,
       // wheelPxPerZoomLevel: 80
     })
 
@@ -54,6 +54,7 @@ class floorEditor {
     let bounds = await this.getBounds(imageUrl)
     L.imageOverlay(imageUrl, bounds).addTo(floorMap)
     floorMap.fitBounds(bounds)
+    floorMap.setMinZoom(floorMap.getZoom())
 
     if (this.mode === 'editor') {
       // this.addEditControls(floorMap)
